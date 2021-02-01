@@ -1,816 +1,1140 @@
-
 <!doctype html>
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title></title>
 	<style>
-    	/* -------------------------------------
+		/* -------------------------------------
         	GLOBAL RESETS
     	------------------------------------- */
-    	img {
-        	border: none;
-        	-ms-interpolation-mode: bicubic;
-        	max-width: 100%;
-    	}
+		img {
+			border: none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%;
+		}
 
-    	body {
-        	background-color: #f6f6f6;
-        	font-family: sans-serif;
-        	-webkit-font-smoothing: antialiased;
-        	font-size: 14px;
-        	line-height: 1.4;
-        	margin: 0;
-        	padding: 0;
-        	-ms-text-size-adjust: 100%;
-        	-webkit-text-size-adjust: 100%;
-    	}
+		body {
+			background-color: #f6f6f6;
+			font-family: sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 14px;
+			line-height: 1.4;
+			margin: 0;
+			padding: 0;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
 
-    	table {
-        	border-collapse: separate;
-        	mso-table-lspace: 0pt;
-        	mso-table-rspace: 0pt;
-        	width: 100%;
-        	border-spacing: 0;
-    	}
+		table {
+			border-collapse: separate;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+			width: 100%;
+			border-spacing: 0;
+		}
 
-    	table td {
-        	font-family: sans-serif;
-        	font-size: 14px;
-        	vertical-align: top;
-    	}
+		table td {
+			font-family: sans-serif;
+			font-size: 14px;
+			vertical-align: top;
+		}
 
-    	/* -------------------------------------
+		/* -------------------------------------
         	BODY & CONTAINER
     	------------------------------------- */
 
-    	.body {
-        	background-color: #f6f6f6;
-        	width: 100% !important;
-    	}
+		.body {
+			background-color: #f6f6f6;
+			width: 100% !important;
+		}
 
-    	/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
-    	.container {
-        	display: block;
-        	margin: 0 auto !important;
-        	/* makes it centered */
-        	max-width: 600px;
-        	width: 100%;
-    	}
+		/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+		.container {
+			display: block;
+			margin: 0 auto !important;
+			/* makes it centered */
+			max-width: 600px;
+			width: 100%;
+		}
 
-    	/* This should also be a block element, so that it will fill 100% of the .container */
-    	.content {
-        	box-sizing: border-box;
-        	display: block;
-        	margin: 0 auto;
-        	max-width: 600px;
-    	}
+		/* This should also be a block element, so that it will fill 100% of the .container */
+		.content {
+			box-sizing: border-box;
+			display: block;
+			margin: 0 auto;
+			max-width: 600px;
+		}
 
-    	/* -------------------------------------
+		/* -------------------------------------
         	HEADER, FOOTER, MAIN
     	------------------------------------- */
-    	.header-logo {
-        	display: block;
-        	text-align: center;
-        	margin: 30px 0 25px;
-    	}
-    	.header-header {
-        	display: block;
-        	text-align: center;
-        	margin: 0;
-    	}
-    	.header-header img {
-        	display: block;
-    	}
+		.header-logo {
+			display: block;
+			text-align: center;
+			margin: 30px 0 25px;
+		}
 
-    	.main {
-        	border-spacing: 0;
-        	font-family: sans-serif;
-        	background-color: #081e33;
-        	color: #fff;
-        	border: none;
-    	}
+		.header-header {
+			display: block;
+			text-align: center;
+			margin: 0;
+		}
 
-    	.wrapper {
-        	box-sizing: border-box;
-        	padding: 30px;
-    	}
+		.header-header img {
+			display: block;
+		}
 
-    	.content-block {
-        	padding-bottom: 10px;
-        	padding-top: 10px;
-    	}
+		.main {
+			border-spacing: 0;
+			font-family: sans-serif;
+			background-color: #081e33;
+			color: #fff;
+			border: none;
+		}
 
-    	.footer {
-        	clear: both;
-        	margin-top: 10px;
-        	text-align: center;
-        	width: 100%;
-    	}
+		.wrapper {
+			box-sizing: border-box;
+			padding: 30px;
+		}
 
-    	.footer td,
-    	.footer p,
-    	.footer span,
-    	.footer a {
-        	color: #fff;
-        	font-size: 14px;
-        	text-align: center;
-    	}
+		.content-block {
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
 
-    	/* -------------------------------------
+		.footer {
+			clear: both;
+			margin-top: 10px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.footer td,
+		.footer p,
+		.footer span,
+		.footer a {
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		/* -------------------------------------
         	TYPOGRAPHY
     	------------------------------------- */
-    	h1,
-    	h2,
-    	h3,
-    	h4 {
-        	color: #000000;
-        	font-family: sans-serif;
-        	font-weight: 400;
-        	line-height: 1.4;
-        	margin: 0;
-        	margin-bottom: 30px;
-    	}
+		h1,
+		h2,
+		h3,
+		h4 {
+			color: #000000;
+			font-family: sans-serif;
+			font-weight: 400;
+			line-height: 1.4;
+			margin: 0;
+			margin-bottom: 30px;
+		}
 
-    	h1 {
-        	font-size: 35px;
-        	font-weight: 300;
-        	text-align: center;
-        	text-transform: capitalize;
-    	}
+		h1 {
+			font-size: 35px;
+			font-weight: 300;
+			text-align: center;
+			text-transform: capitalize;
+		}
 
-    	p,
-    	ul,
-    	ol {
-        	color: #fff;
-        	font-family: sans-serif;
-        	font-size: 0.9375rem;
-            letter-spacing: 0.032em;
-        	font-weight: normal;
-        	margin: 0;
-        	margin-bottom: 20px;
-    	}
+		p,
+		ul,
+		ol {
+			color: #fff;
+			font-family: sans-serif;
+			font-size: 0.9375rem;
+			letter-spacing: 0.032em;
+			font-weight: normal;
+			margin: 0;
+			margin-bottom: 20px;
+		}
 
-    	p li,
-    	ul li,
-    	ol li {
-        	list-style-position: inside;
-        	margin-left: 5px;
-    	}
+		p li,
+		ul li,
+		ol li {
+			list-style-position: inside;
+			margin-left: 5px;
+		}
 
-    	a {
-        	color: #0065b5;
-        	text-decoration: underline;
-    	}
+		a {
+			color: #0065b5;
+			text-decoration: underline;
+		}
 
-    	/* -------------------------------------
+		/* -------------------------------------
         	BUTTONS
     	------------------------------------- */
-    	.btn {
-        	box-sizing: border-box;
-        	width: 100%;
-    	}
+		.btn {
+			box-sizing: border-box;
+			width: 100%;
+		}
 
-    	.btn > tbody > tr > td {
-        	padding-bottom: 20px;
-    	}
+		.btn>tbody>tr>td {
+			padding-bottom: 20px;
+		}
 
-    	.btn table {
-        	width: auto;
-    	}
+		.btn table {
+			width: auto;
+		}
 
-    	.btn table td {
-        	background-color: #ffffff;
-        	border-radius: 5px;
-        	text-align: center;
-    	}
+		.btn table td {
+			background-color: #ffffff;
+			border-radius: 5px;
+			text-align: center;
+		}
 
-    	.btn a {
-        	font-weight: 400;
-        	padding-right: 20px;
-        	padding-left: 20px;
-        	height: 40px;
-        	line-height: 40px;
-        	display: block;
-        	color: #ffffff;
-        	text-align: center;
-        	background: #73b259;
-        	border-radius: 4px;
-        	font-size: 15px;
-        	text-decoration: none;
-    	}
+		.btn a {
+			font-weight: 400;
+			padding-right: 20px;
+			padding-left: 20px;
+			height: 40px;
+			line-height: 40px;
+			display: block;
+			color: #ffffff;
+			text-align: center;
+			background: #73b259;
+			border-radius: 4px;
+			font-size: 15px;
+			text-decoration: none;
+		}
 
-    	.btn-primary table td {
-        	background-color: #0065b5;
-    	}
+		.btn-primary table td {
+			background-color: #0065b5;
+		}
 
-    	.btn-primary a {
-        	background-color: #0065b5;
-        	border-color: #0065b5;
-        	color: #ffffff;
-    	}
-    	ul {
-        	padding-left: 0;
-        	margin-left: 0;
-    	}
-    	/* -------------------------------------
+		.btn-primary a {
+			background-color: #0065b5;
+			border-color: #0065b5;
+			color: #ffffff;
+		}
+
+		ul {
+			padding-left: 0;
+			margin-left: 0;
+		}
+
+		/* -------------------------------------
         	OTHER STYLES THAT MIGHT BE USEFUL
     	------------------------------------- */
-    	.last {
-        	margin-bottom: 0;
-    	}
+		.last {
+			margin-bottom: 0;
+		}
 
-    	.first {
-        	margin-top: 0;
-    	}
+		.first {
+			margin-top: 0;
+		}
 
-    	.align-center {
-        	text-align: center;
-    	}
+		.align-center {
+			text-align: center;
+		}
 
-    	.align-right {
-        	text-align: right;
-    	}
+		.align-right {
+			text-align: right;
+		}
 
-    	.align-left {
-        	text-align: left;
-    	}
+		.align-left {
+			text-align: left;
+		}
 
-    	.clear {
-        	clear: both;
-    	}
+		.clear {
+			clear: both;
+		}
 
-    	.mt0 {
-        	margin-top: 0;
-    	}
+		.mt0 {
+			margin-top: 0;
+		}
 
-    	.mb0 {
-        	margin-bottom: 0;
-    	}
+		.mb0 {
+			margin-bottom: 0;
+		}
 
-    	.preheader {
-        	color: transparent;
-        	display: none;
-        	height: 0;
-        	max-height: 0;
-        	max-width: 0;
-        	opacity: 0;
-        	overflow: hidden;
-        	mso-hide: all;
-        	visibility: hidden;
-        	width: 0;
-    	}
+		.preheader {
+			color: transparent;
+			display: none;
+			height: 0;
+			max-height: 0;
+			max-width: 0;
+			opacity: 0;
+			overflow: hidden;
+			mso-hide: all;
+			visibility: hidden;
+			width: 0;
+		}
 
-    	.powered-by a {
-        	text-decoration: none;
-    	}
+		.powered-by a {
+			text-decoration: none;
+		}
 
-    	hr {
-        	border: 0;
-        	border-bottom: 1px solid #f6f6f6;
-        	margin: 20px 0;
-    	}
-    	h2 {
-        	border-top: 1px solid #e6e6e6;
-        	border-bottom: 1px solid #e6e6e6;
-        	padding: 10px 0;
-        	margin: 10px 0 0;
-    	}
-    	.services-item {
-        	border-bottom: 1px solid #e6e6e6;
-        	padding: 20px 0;
-    	}
-    	.services-item.no-border {
-        	border: none;
-    	}
-    	.services-item p {
-        	margin-bottom: 10px;
-    	}
-    	.services-item a {
-        	display: block;
-        	margin: 0 0 10px;
-        	font-size: 16px;
-    	}
-    	table td.footer_links {
-        	text-align:right;
-        	padding-right: 20px;
-        	padding-bottom: 15px;
-    	}
+		hr {
+			border: 0;
+			border-bottom: 1px solid #f6f6f6;
+			margin: 20px 0;
+		}
 
-    	/* -------------------------------------
+		h2 {
+			border-top: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+			padding: 10px 0;
+			margin: 10px 0 0;
+		}
+
+		.services-item {
+			border-bottom: 1px solid #e6e6e6;
+			padding: 20px 0;
+		}
+
+		.services-item.no-border {
+			border: none;
+		}
+
+		.services-item p {
+			margin-bottom: 10px;
+		}
+
+		.services-item a {
+			display: block;
+			margin: 0 0 10px;
+			font-size: 16px;
+		}
+
+		table td.footer_links {
+			text-align: right;
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+
+		/* -------------------------------------
         	RESPONSIVE AND MOBILE FRIENDLY STYLES
     	------------------------------------- */
-    	@media only screen and (max-width: 620px) {
-        	table[class=body] h1 {
-            	font-size: 28px !important;
-            	margin-bottom: 10px !important;
-        	}
+		@media only screen and (max-width: 620px) {
+			table[class=body] h1 {
+				font-size: 28px !important;
+				margin-bottom: 10px !important;
+			}
 
 
-        	
-        	table[class=body] .content {
-            	padding: 0 !important;
-        	}
 
-        	table[class=body] .container {
-            	padding: 0 !important;
-            	width: 100% !important;
-        	}
+			table[class=body] .content {
+				padding: 0 !important;
+			}
 
-        	table[class=body] .main {
-            	border-left: 0 !important;
-            	border-radius: 0 !important;
-            	border-right: 0 !important;
-            	box-shadow: none;
-        	}
+			table[class=body] .container {
+				padding: 0 !important;
+				width: 100% !important;
+			}
 
-        	table[class=body] .btn table {
-            	width: 100% !important;
-        	}
+			table[class=body] .main {
+				border-left: 0 !important;
+				border-radius: 0 !important;
+				border-right: 0 !important;
+				box-shadow: none;
+			}
 
-        	table[class=body] .btn a {
-            	width: 100% !important;
-            	-webkit-box-sizing: border-box;
-            	-moz-box-sizing: border-box;
-            	box-sizing: border-box;
-        	}
+			table[class=body] .btn table {
+				width: 100% !important;
+			}
 
-        	table[class=body] .img-responsive {
-            	height: auto !important;
-            	max-width: 100% !important;
-            	width: auto !important;
-        	}
-        	table td.footer_logo {
-            	display: block;
-        	}
-        	table td.footer_links {
-            	display: block;
-            	text-align: center;
-            	padding-right: 0;
-        	}
-    	}
+			table[class=body] .btn a {
+				width: 100% !important;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
 
-    	/* -------------------------------------
+			table[class=body] .img-responsive {
+				height: auto !important;
+				max-width: 100% !important;
+				width: auto !important;
+			}
+
+			table td.footer_logo {
+				display: block;
+			}
+
+			table td.footer_links {
+				display: block;
+				text-align: center;
+				padding-right: 0;
+			}
+		}
+
+		/* -------------------------------------
         	PRESERVE THESE STYLES IN THE HEAD
     	------------------------------------- */
-    	@media all {
-        	.ExternalClass {
-            	width: 100%;
-        	}
+		@media all {
+			.ExternalClass {
+				width: 100%;
+			}
 
-        	.ExternalClass,
-        	.ExternalClass p,
-        	.ExternalClass span,
-        	.ExternalClass font,
-        	.ExternalClass td,
-        	.ExternalClass div {
-            	line-height: 100%;
-        	}
+			.ExternalClass,
+			.ExternalClass p,
+			.ExternalClass span,
+			.ExternalClass font,
+			.ExternalClass td,
+			.ExternalClass div {
+				line-height: 100%;
+			}
 
-        	.apple-link a {
-            	color: inherit !important;
-            	font-family: inherit !important;
-            	font-size: inherit !important;
-            	font-weight: inherit !important;
-            	line-height: inherit !important;
-            	text-decoration: none !important;
-        	}
+			.apple-link a {
+				color: inherit !important;
+				font-family: inherit !important;
+				font-size: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+				text-decoration: none !important;
+			}
 
-        	.btn-primary table td:hover {
-            	background-color: #34495e !important;
-        	}
+			.btn-primary table td:hover {
+				background-color: #34495e !important;
+			}
 
-        	.btn-primary a:hover {
-            	background-color: #34495e !important;
-            	border-color: #34495e !important;
-        	}
-    	}
+			.btn-primary a:hover {
+				background-color: #34495e !important;
+				border-color: #34495e !important;
+			}
+		}
 
-        table[class=body] td.two-columns{
-            font-size:0 !important;
-        }
-        .two-columns .column {
-            max-width: 285px
-        }
-        border-radius{
-                border-radius: 7px 0 0 7px;
-            }
-        @media only screen and (max-width:450px) {
-            .two-columns .column {
-                max-width: 100%!important;
-                text-align: center !important;
-            }
-            .border-radius{
-                border-radius: 10px !important;
-                width: 100% !important
-            }
-        }
+		table[class=body] td.two-columns {
+			font-size: 0 !important;
+		}
 
-        @media screen and (min-width:451px) and (max-width:635px) {
-            .two-columns .column {
-                max-width: 65%!important;
-            }
-            .two-columns .column.column--left {
-                max-width: 35%!important;
-            }
-        }
+		.two-columns .column {
+			max-width: 285px
+		}
+
+		border-radius {
+			border-radius: 7px 0 0 7px;
+		}
+
+		@media only screen and (max-width:450px) {
+			.two-columns .column {
+				max-width: 100% !important;
+				text-align: center !important;
+			}
+
+			.border-radius {
+				border-radius: 10px !important;
+				width: 100% !important
+			}
+		}
+
+		@media screen and (min-width:451px) and (max-width:635px) {
+			.two-columns .column {
+				max-width: 65% !important;
+			}
+
+			.two-columns .column.column--left {
+				max-width: 35% !important;
+			}
+		}
 	</style>
 </head>
-<body class="" style="width: 100% !important;background-color: #f6f6f6;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-	<table border="0" cellpadding="0" cellspacing="0" class="body" style="width: 100% !important;border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;background-color: #f6f6f6;">
-    	<tr>
-        	<td class="container" style="font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 600px;width: 100%;margin: 0 auto !important;">
-            	<div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 600px;">
-                	<span class="header-header" style="display: block;text-align: center;margin: 0;"><img src="https://uploads.russia-israel.com/lettter6-dark/logo.png" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;display: block;"></span>
-                	<!-- START CENTERED WHITE CONTAINER -->
-                	<span class="preheader" style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
-                	<table class="main" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;font-family: sans-serif;background-color: #081e33;color: #fff;border: none;">
 
-                    	<!-- START MAIN CONTENT AREA -->
-                    	<tr>
-                        	<td class="wrapper" style="font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 32px 0;">
-                            	<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;">
-                                	<tr>
-                                    	<td style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 30px;padding-right: 30px;">
-                                        	<p style="font-size: 25px;font-weight: 700;margin: 0;margin-bottom: 25px;color: #fff;font-family: sans-serif;">{{Name|Шалом}}{{Name?, шалом}} и здравствуйте!</p>
+<body class=""
+	style="width: 100% !important;background-color: #f6f6f6;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<table border="0" cellpadding="0" cellspacing="0" class="body"
+		style="width: 100% !important;border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;background-color: #f6f6f6;">
+		<tr>
+			<td class="container"
+				style="font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 600px;width: 100%;margin: 0 auto !important;">
+				<div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 600px;">
+					<span class="header-header" style="display: block;text-align: center;margin: 0;"><img
+							src="https://uploads.russia-israel.com/lettter6-dark/logo.png"
+							style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;display: block;"></span>
+					<!-- START CENTERED WHITE CONTAINER -->
+					<span class="preheader"
+						style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
+					<table class="main"
+						style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;font-family: sans-serif;background-color: #081e33;color: #fff;border: none;">
 
-                                            <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 13px;">О ГЛАВНОМ</p>
-                                       	 
-                                        	<p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">Новогодние каникулы позади, и мы возобновляем рассылку, в которой будем рассказывать самые свежие новости и отвечать на вопросы, связанные с гражданством Израиля.</p>
+						<!-- START MAIN CONTENT AREA -->
+						<tr>
+							<td class="wrapper"
+								style="font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 32px 0;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;">
+									<tr>
+										<td
+											style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 30px;padding-right: 30px;">
+											<p
+												style="font-size: 25px;font-weight: 700;margin: 0;margin-bottom: 25px;color: #fff;font-family: sans-serif;">
+												{{Name|Шалом}}{{Name?, шалом}} и здравствуйте!</p>
 
-                                        	<p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">Отправляя письмо, мы думаем о том, что наиболее актуально для Вас и <strong>стараемся, чтобы письма были полезны.</strong></p>
+											<p
+												style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 13px;">
+												О ГЛАВНОМ</p>
 
-                                        	<p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;"><strong>Поэтому хотим начать с оценки качества рассылки.</strong> Уделите, пожалуйста, 1 минуту времени и ответьте на 5 коротких вопроса. Нам важно знать Ваше мнение!</p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												Новогодние каникулы позади, и мы возобновляем рассылку, в которой будем
+												рассказывать самые свежие новости и отвечать на вопросы, связанные с
+												гражданством Израиля.</p>
 
-                                            <p style="text-align: center;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
-                                                <a href="https://www.survio.com/survey/d/E4P7E1V5F2I5X4B1Q" style="color: #0065b5;text-decoration: underline;">
-                                                    <img src="https://uploads.russia-israel.com/lettter6-dark/button-1.png" alt="" style="max-width: 242px;width:100%;border: none;-ms-interpolation-mode: bicubic;">
-                                                </a>
-                                            </p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												Отправляя письмо, мы думаем о том, что наиболее актуально для Вас и
+												<strong>стараемся, чтобы письма были полезны.</strong></p>
 
-                                            <p style="color: #EBEBEB;font-family: sans-serif;font-size: 13px;font-weight: normal;margin: 0;margin-bottom: 20px;">Больше не хотите читать наши письма? Мы уважаем Ваш выбор.<br>
-                                            Для отмены подписки перейдите <a style="color: #EBEBEB;font-family: sans-serif;font-size: 13px;font-weight: normal;margin: 0;border-bottom: 1px solid #EBEBEB;text-decoration: none" target="_blank" href="https://us4-usndr.com/ru/unsubscribe?hash=653yfobmqmjisnsodoou1cq6ku4r77ue68t5xnkdqbowsm1dpon4t6uwqifs3z8j5y9sgan6ax68ta#no_tracking">сюда</a>.</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 0;padding-right: 0;">
-                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
-                                                <img src="https://uploads.russia-israel.com/lettter6-dark/img1.jpg" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-										<td style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 32px;">                     
-											<p style="color: #D19A0C;font-family: sans-serif;font-size: 18px;font-weight: 700;margin: 0;margin-bottom: 20px;padding-right: 10px">Сотрудничество</p>                    
-                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;padding-right: 10px">Уважаемый, Имя, благодарим, что доверили нам такой важный вопрос, как оформление гражданства Израиля!</p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;">
+												<strong>Поэтому хотим начать с оценки качества рассылки.</strong>
+												Уделите, пожалуйста, 1 минуту времени и ответьте на 5 коротких вопроса.
+												Нам важно знать Ваше мнение!</p>
 
-                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">Кроме этого специалисты РИКЦ готовы решать для Вас вопросы, возникающие после получения гражданства и в том числе на территории Израиля.</p>
+											<p
+												style="text-align: center;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												<a href="https://www.survio.com/survey/d/E4P7E1V5F2I5X4B1Q"
+													style="color: #0065b5;text-decoration: underline;">
+													<img src="https://uploads.russia-israel.com/lettter6-dark/button-1.png"
+														alt=""
+														style="max-width: 242px;width:100%;border: none;-ms-interpolation-mode: bicubic;">
+												</a>
+											</p>
 
-                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">РИКЦ входит в холдинг <strong>Alfa Russia-Israel Group</strong> — израильскую организацию, специализирующуюся в области различных видов сервиса и услуг на территории Израиля.</p>
+											<p
+												style="color: #EBEBEB;font-family: sans-serif;font-size: 13px;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												Больше не хотите читать наши письма? Мы уважаем Ваш выбор.<br>
+												Для отмены подписки перейдите <a
+													style="color: #EBEBEB;font-family: sans-serif;font-size: 13px;font-weight: normal;margin: 0;border-bottom: 1px solid #EBEBEB;text-decoration: none"
+													target="_blank"
+													href="https://us4-usndr.com/ru/unsubscribe?hash=653yfobmqmjisnsodoou1cq6ku4r77ue68t5xnkdqbowsm1dpon4t6uwqifs3z8j5y9sgan6ax68ta#no_tracking">сюда</a>.
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td
+											style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 0;padding-right: 0;">
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												<img src="https://uploads.russia-israel.com/lettter6-dark/img1.jpg"
+													alt=""
+													style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td
+											style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 32px;">
+											<p
+												style="color: #D19A0C;font-family: sans-serif;font-size: 18px;font-weight: 700;margin: 0;margin-bottom: 20px;padding-right: 10px">
+												Сотрудничество</p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;padding-right: 10px">
+												Уважаемый, Имя, благодарим, что доверили нам такой важный вопрос, как
+												оформление гражданства Израиля!</p>
 
-                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">В холдинг <strong>Alfa Russia-Israel Group</strong> входят компании:</p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												Кроме этого специалисты РИКЦ готовы решать для Вас вопросы, возникающие
+												после получения гражданства и в том числе на территории Израиля.</p>
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 30px;padding-top: 25px;background-color: #081623">                                         
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:100px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
-                                                                                                        <a target="_blank" href="https://alfagroup.co.il/health-insurance.html" style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/partner-1.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 84px">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:438px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
-                                                                                                        <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">Alliance Insurance</p>
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.01em">— страховой брокер, который предлагает сервис высочайшего уровня и индивидуальный подход. Более 10 лет сотрудничает с ведущими страховыми холдингами Израиля. <strong>Помогает выбрать страховую компанию, отстоять интересы клиента, обеспечить получение медицинской помощи Гражданам Израиля независимо от того, где они проживают.</strong></p>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                            </table>
-                                            <div style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px"></div>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
-                                                                                                        <a target="_blank" href="https://alfagroup.co.il/investments.html" style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/partner-2.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 62px">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
-                                                                                                        <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">Alfa Invest Israel</p>
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.01em">— помогает подобрать элитную недвижимость и инвестировать в Израиле. Компания не только сопровождает в покупке недвижимость в Израиле, но и содействует на этапе ипотечного кредитования.</p>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                            </table>
-                                            <div style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px"></div>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
-                                                                                                        <a target="_blank" href="https://alfagroup.co.il/turizm.html" style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/partner-3.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 92px">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
-                                                                                                        <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">Alfa Emigration</p>
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.004em">— занимается инвестиционными программами получения ВНЖ, ПМЖ, гражданства в более чем 40 странах, в том числе в странах ЕС и Карибского бассейна и помогает тем, кто привык к высокому уровню сервиса и экономит свое время!</p>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                            </table>
-                                            <div style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px"></div>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
-                                                                                                        <a target="_blank" href="https://alfagroup.co.il/nedvizhimost.html" style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/partner-4.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 77px">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
-                                                                                                        <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">Alfa Apartments</p>
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.004em">— лидер рынка в сфере краткосрочной аренды жилья и управлении недвижимостью в Тель-Авиве, Бат-Яме, Герцлии, Нетании. Поможет Вам найти подходящее жилье для комфортного проживания на время пребывания в Израиле. Работаем с собственным жилым фондом и без посредников.
-</p>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 30px;padding-top: 35px;">
-                                            <p style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 17px;">ПОЛЕЗНОЕ</p>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 15px;">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
-                                                                                                        <a target="_blank" href="https://russia-israel.com/smi/banki-izrailya-universalny-no-vy-ne-poluchite-vysokogo-urovnya-servisa.html " style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/news-1.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
-                                                                                                        
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;"><strong>Банки Израиля</strong> универсальны, но вы не получите высокого уровня сервиса
-                                                                                                        </p>
-                                                                                                        <a target="_blank" href="https://russia-israel.com/smi/banki-izrailya-universalny-no-vy-ne-poluchite-vysokogo-urovnya-servisa.html " style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span style="text-decoration: underline;"> Читать</span> →</a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												РИКЦ входит в холдинг <strong>Alfa Russia-Israel Group</strong> —
+												израильскую организацию, специализирующуюся в области различных видов
+												сервиса и услуг на территории Израиля.</p>
 
-                                                                            </tbody>
-                                            </table>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 15px">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
-                                                                                                        <a target="_blank" href="https://russia-israel.com/news/israel/top-10-luchshih-meditsinskih-klinik-izrailya.html" style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/news-2.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
-                                                                                                        
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;"><strong>ТОП-10 лучших медицинских клиник
-Израиля</strong>
-                                                                                                        </p>
-                                                                                                        <a target="_blank" href="https://russia-israel.com/news/israel/top-10-luchshih-meditsinskih-klinik-izrailya.html " style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span style="text-decoration: underline;"> Читать</span> →</a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                                
-                                                                            </tbody>
-                                            </table>
-                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 0">
-                                                                            <tbody>
-                                                                               <tr>
-                                                                                    <td class="two-columns" style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
-                                                                                        <div class="column column--left" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
-                                                                                                        <a target="_blank" href="https://russia-israel.com/news/israel/4-varianta-polisa-chastnogo-meditsinskogo-strahovaniya-v-izraile.html " style="color: #0065b5;text-decoration: underline;">
-                                                                                                            <img src="https://uploads.russia-israel.com/lettter6-dark/news-3.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
-                                                                                                        </a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                        <div class="column" style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
-                                                                                           <table width="100%" cellpadding="10" style="border-collapse:collapse">
-                                                                                              <tbody>
-                                                                                                 <tr>
-                                                                                                    <td style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
-                                                                                                        
-                                                                                                        <p style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;"><strong>4 варианта полиса частного медицинского страхования в Израиле</strong>
-                                                                                                        </p>
-                                                                                                        <a target="_blank" href="https://russia-israel.com/news/israel/4-varianta-polisa-chastnogo-meditsinskogo-strahovaniya-v-izraile.html " style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span style="text-decoration: underline;"> Читать</span> →</a>
-                                                                                                    </td>
-                                                                                                 </tr>
-                                                                                              </tbody>
-                                                                                           </table>
-                                                                                        </div>
-                                                                                     </td>
-                                                                                </tr>
-                                                                                
-                                                                            </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                            	</table>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+												В холдинг <strong>Alfa Russia-Israel Group</strong> входят компании:</p>
 
-                        	</td>
-                    	</tr>
+										</td>
+									</tr>
+									<tr>
+										<td
+											style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 30px;padding-top: 25px;background-color: #081623">
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:100px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
+																				<a target="_blank"
+																					href="https://alfagroup.co.il/health-insurance.html"
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/partner-1.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 84px">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:438px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
+																				<p
+																					style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">
+																					Alliance Insurance</p>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.01em">
+																					— страховой брокер, который
+																					предлагает сервис высочайшего уровня
+																					и индивидуальный подход. Более 10
+																					лет сотрудничает с ведущими
+																					страховыми холдингами Израиля.
+																					<strong>Помогает выбрать страховую
+																						компанию, отстоять интересы
+																						клиента, обеспечить получение
+																						медицинской помощи Гражданам
+																						Израиля независимо от того, где
+																						они проживают.</strong></p>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<div
+												style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px">
+											</div>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
+																				<a target="_blank"
+																					href="https://alfagroup.co.il/investments.html"
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/partner-2.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 62px">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
+																				<p
+																					style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">
+																					Alfa Invest Israel</p>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.01em">
+																					— помогает подобрать элитную
+																					недвижимость и инвестировать в
+																					Израиле. Компания не только
+																					сопровождает в покупке недвижимость
+																					в Израиле, но и содействует на этапе
+																					ипотечного кредитования.</p>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<div
+												style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px">
+											</div>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
+																				<a target="_blank"
+																					href="https://alfagroup.co.il/turizm.html"
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/partner-3.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 92px">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
+																				<p
+																					style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">
+																					Alfa Emigration</p>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.004em">
+																					— занимается инвестиционными
+																					программами получения ВНЖ, ПМЖ,
+																					гражданства в более чем 40 странах,
+																					в том числе в странах ЕС и
+																					Карибского бассейна и помогает тем,
+																					кто привык к высокому уровню сервиса
+																					и экономит свое время!</p>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<div
+												style="height: 6px; background-color: #0B2741; border-radius: 3px; margin-bottom: 20px">
+											</div>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:105px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 15px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px 0 0;">
+																				<a target="_blank"
+																					href="https://alfagroup.co.il/nedvizhimost.html"
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/partner-4.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;width: 77px">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:431px;text-align:left;vertical-align:top;width:100%; padding: 0 0 25px;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0 10px;">
+																				<p
+																					style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 8px;">
+																					Alfa Apartments</p>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 0;letter-spacing: 0.004em">
+																					— лидер рынка в сфере краткосрочной
+																					аренды жилья и управлении
+																					недвижимостью в Тель-Авиве, Бат-Яме,
+																					Герцлии, Нетании. Поможет Вам найти
+																					подходящее жилье для комфортного
+																					проживания на время пребывания в
+																					Израиле. Работаем с собственным
+																					жилым фондом и без посредников.
+																				</p>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td
+											style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 32px;padding-right: 30px;padding-top: 35px;">
+											<p
+												style="color: #D19A0C;font-family: sans-serif;font-size: 17px;font-weight: 700;margin: 0;margin-bottom: 17px;">
+												ПОЛЕЗНОЕ</p>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 15px;">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
+																				<a target="_blank"
+																					href="https://russia-israel.com/smi/banki-izrailya-universalny-no-vy-ne-poluchite-vysokogo-urovnya-servisa.html "
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/news-1.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
 
-                    	<tr>
-                        	<td style="text-align: center;background-color: #13304B;padding-top: 50px;padding-bottom: 10px;padding-left: 30px;padding-right: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;">
-                            	<p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
-                                	<img src="https://russia-israel.com/uploads/dark-template/telegram-logo-min.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
-                            	</p>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;">
+																					<strong>Банки Израиля</strong>
+																					универсальны, но вы не получите
+																					высокого уровня сервиса
+																				</p>
+																				<a target="_blank"
+																					href="https://russia-israel.com/smi/banki-izrailya-universalny-no-vy-ne-poluchite-vysokogo-urovnya-servisa.html "
+																					style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span
+																						style="text-decoration: underline;">
+																						Читать</span> →</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
 
-                            	<p style="font-size: 18px;margin-bottom: 20px;color: #fff;font-family: sans-serif;font-weight: normal;margin: 0;">Самую актуальную и свежую информацию о гражданстве Израиля и вопросах, которые возникают после его получения, мы публикуем в Telegram-канале РИКЦ. <br><br>Подписывайтесь и будьте в курсе!</p>
-                           	 
-                            	<p style="text-align: center;margin-bottom: 20px;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
-                                	<a href="https://t.me/russiaisraelcom" style="color: #0065b5;text-decoration: underline;">
-                                    	<img src="https://russia-israel.com/uploads/dark-template/telegram-btn-min.png" alt="" style="max-width: 326px;width: 100%; border: none;-ms-interpolation-mode: bicubic;">
-                                	</a>
-                            	</p>
-                        	</td>
-                    	</tr>              	 
+												</tbody>
+											</table>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 15px">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
+																				<a target="_blank"
+																					href="https://russia-israel.com/news/israel/top-10-luchshih-meditsinskih-klinik-izrailya.html"
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/news-2.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
 
-                    	<tr>
-                        	<td class="vadim-block" style="text-align: center;background-color: #072142;padding-top: 30px;padding-bottom: 0;font-family: sans-serif;font-size: 14px;vertical-align: top; padding-left: 30px;padding-right: 30px;">
-                            	<img src="https://russia-israel.com/uploads/dark-template/vadim.png" alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
-                            	<p style="padding-top: 20px;font-weight: 500;font-size: 18px;margin-bottom: 20px;line-height: 1;color: #fff;font-family: sans-serif;margin: 0;">С уважением, Вадим Жоров</p>
-                            	<p style="margin-bottom: 5px;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
-                                	<span style="display: inline-block;height: 1px;width: 200px;background-color: #6C5008"></span>
-                            	</p>
-                            	<p style="color: #fff;font-family: sans-serif;font-size: 13px;font-weight: normal;margin: 0;margin-bottom: 20px;">Основатель РИКЦ
-</p>
-                                <div style="height: 1px; background-color: #51637b"></div>
-                        	</td>
-                    	</tr>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;">
+																					<strong>ТОП-10 лучших медицинских
+																						клиник
+																						Израиля</strong>
+																				</p>
+																				<a target="_blank"
+																					href="https://russia-israel.com/news/israel/top-10-luchshih-meditsinskih-klinik-izrailya.html "
+																					style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span
+																						style="text-decoration: underline;">
+																						Читать</span> →</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
 
-                    	<tr>
-                        	<td class="footer" style="background-color: #072142;padding-top: 30px;margin-top: 10px;font-family: sans-serif;font-size: 14px;vertical-align: top;clear: both;text-align: center;width: 100%;">
-                            	<table style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
-                                	<tr>
-                                    	<td class="footer_logo" style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
-                                        	<p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
-                                            	<img src="https://russia-israel.com/uploads/dark-template/footer-logo-2x.png" alt="" width="133" height="64" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
-                                        	</p>
-                                        	<p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
-                                            	<a href="https://www.youtube.com/channel/UChkKRDcO3aYoowaoLonh-KA" target="_blank" style="color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"><img src="https://russia-israel.com/uploads/dark-template/youtube.png" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
-                                            	<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://www.facebook.com/alfaricc/" target="_blank"><img src="https://russia-israel.com/uploads/dark-template/facebook.png" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
-                                            	<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://www.instagram.com/russia_israel_com/" target="_blank"><img src="https://russia-israel.com/uploads/dark-template/instagram.png" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
-                                            	<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://t.me/russiaisraelcom" target="_blank"><img src="https://russia-israel.com/uploads/dark-template/telegram.png" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
-                                        	</p>
-                                    	</td>
-                                	</tr>
-                                	<tr>
-                                    	<td class="footer_links" style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 15px;padding-right: 20px;">
-                                        	<table style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;">
-                                            	<tr>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div style="font-weight: bold;"><a href="https://russia-israel.com/grazhdanstvo-izrailya" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">ГРАЖДАНСТВО ИЗРАИЛЯ</a></div></td>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div style="font-weight: bold;"><a href="https://russia-israel.com/repatriatsiya-v-izraile" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">РЕПАТРИАЦИЯ В ИЗРАИЛЬ</a></div></td>
-                                            	</tr>
-                                            	<tr>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div style="font-weight: bold;"><a href="https://support.russia-israel.com/" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">АБОНЕНТСКАЯ ПОДДЕРЖКА</a></div></td>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div style="font-weight: bold;"><a href="https://insurance.russia-israel.com/" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">МЕДИЦИНСКОЕ СТРАХОВАНИЕ</a></div></td>
-                                            	</tr>
-                                            	<tr>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div><a href="https://russia-israel.com/recommend" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">Нас рекомендуют</a></div></td>
-                                                	<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;"><div><a href="https://russia-israel.com/reviews" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">Отзывы о компании</a></div></td>
-                                            	</tr>
-                                        	</table>
-                                    	</td>
-                                	</tr>
-                                	<tr>
-                                    	<td colspan="2" style="border-top: 1px solid #455767;padding-top: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
-                                        	<p style="color: #fff;font-size: 12px;padding-left: 10px;padding-right: 10px;font-family: sans-serif;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">Вы получили данное письмо, так как подписались на рассылку ООО «РИКЦ» на сайте <a href="https://russia-israel.com" target="_blank" style="color: #f3f3f3;text-decoration: underline;font-size: 14px;text-align: center;white-space: nowrap;">russia-israel.com</a>. Если письмо выглядит некорректно, откройте <a href="{{WebLetterUrl}}" target="_blank" style="color: #f3f3f3;text-decoration: underline;font-size: 14px;text-align: center;">web-версию</a></p>
-                                    	</td>
-                                	</tr>
-                            	</table>
-                        	</td>
-                    	</tr>
+												</tbody>
+											</table>
+											<table border="0" cellpadding="0" cellspacing="0"
+												style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;background-color: #123354;box-shadow:         0px 7px 5px -4px rgba(0, 0, 0, 0.3);margin-bottom: 0">
+												<tbody>
+													<tr>
+														<td class="two-columns"
+															style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;padding-left:0;padding-right:0;text-align:center">
+															<div class="column column--left"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:165px;text-align:left;vertical-align:top;width:100%;padding-left: 0;padding-right: 0;padding-bottom: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 0;">
+																				<a target="_blank"
+																					href="https://russia-israel.com/news/israel/4-varianta-polisa-chastnogo-meditsinskogo-strahovaniya-v-izraile.html "
+																					style="color: #0065b5;text-decoration: underline;">
+																					<img src="https://uploads.russia-israel.com/lettter6-dark/news-3.png"
+																						alt=""
+																						style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%; display: block;margin:0 auto;">
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="column"
+																style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:371px;text-align:left;vertical-align:top;width:100%; padding: 0;">
+																<table width="100%" cellpadding="10"
+																	style="border-collapse:collapse">
+																	<tbody>
+																		<tr>
+																			<td
+																				style="-webkit-font-smoothing:subpixel-antialiased;padding: 23px 24px;">
 
-                    	<!-- END MAIN CONTENT AREA -->
-                	</table>
+																				<p
+																					style="color: #fff;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;margin-bottom: 10px;">
+																					<strong>4 варианта полиса частного
+																						медицинского страхования в
+																						Израиле</strong>
+																				</p>
+																				<a target="_blank"
+																					href="https://russia-israel.com/news/israel/4-varianta-polisa-chastnogo-meditsinskogo-strahovaniya-v-izraile.html "
+																					style="color: #52B3E6;font-family: sans-serif;font-size: 15px;font-weight: normal;margin: 0;text-decoration: none"><span
+																						style="text-decoration: underline;">
+																						Читать</span> →</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</td>
+													</tr>
 
-                	<!-- END CENTERED WHITE CONTAINER -->
-            	</div>
-        	</td>
-    	</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+								</table>
+
+							</td>
+						</tr>
+
+						<tr>
+							<td
+								style="text-align: center;background-color: #13304B;padding-top: 50px;padding-bottom: 10px;padding-left: 30px;padding-right: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+								<p
+									style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+									<img src="https://russia-israel.com/uploads/dark-template/telegram-logo-min.png"
+										alt="" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+								</p>
+
+								<p
+									style="font-size: 18px;margin-bottom: 20px;color: #fff;font-family: sans-serif;font-weight: normal;margin: 0;">
+									Самую актуальную и свежую информацию о гражданстве Израиля и вопросах, которые
+									возникают после его получения, мы публикуем в Telegram-канале РИКЦ.
+									<br><br>Подписывайтесь и будьте в курсе!</p>
+
+								<p
+									style="text-align: center;margin-bottom: 20px;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+									<a href="https://t.me/russiaisraelcom"
+										style="color: #0065b5;text-decoration: underline;">
+										<img src="https://russia-israel.com/uploads/dark-template/telegram-btn-min.png"
+											alt=""
+											style="max-width: 326px;width: 100%; border: none;-ms-interpolation-mode: bicubic;">
+									</a>
+								</p>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="vadim-block"
+								style="text-align: center;background-color: #072142;padding-top: 30px;padding-bottom: 0;font-family: sans-serif;font-size: 14px;vertical-align: top; padding-left: 30px;padding-right: 30px;">
+								<img src="https://russia-israel.com/uploads/dark-template/vadim.png" alt=""
+									style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+								<p
+									style="padding-top: 20px;font-weight: 400;font-size: 18px;margin-bottom: 20px;line-height: 1;color: #fff;font-family: sans-serif;margin: 0;">
+									С уважением, Вадим Жоров</p>
+								<p
+									style="margin-bottom: 5px;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+									<span
+										style="display: inline-block;height: 1px;width: 200px;background-color: #6C5008"></span>
+								</p>
+								<p
+									style="color: #fff;font-family: sans-serif;font-size: 18px;font-weight: normal;margin: 0;margin-bottom: 20px;">
+									Основатель РИКЦ
+								</p>
+								<div style="height: 1px; background-color: #51637b"></div>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="footer"
+								style="background-color: #072142;padding-top: 30px;margin-top: 10px;font-family: sans-serif;font-size: 14px;vertical-align: top;clear: both;text-align: center;width: 100%;">
+								<table
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td class="footer_logo"
+											style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+												<img src="https://russia-israel.com/uploads/dark-template/footer-logo-2x.png"
+													alt="" width="133" height="64"
+													style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+											</p>
+											<p
+												style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+												<a href="https://www.youtube.com/channel/UChkKRDcO3aYoowaoLonh-KA"
+													target="_blank"
+													style="color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"><img
+														src="https://russia-israel.com/uploads/dark-template/youtube.png"
+														style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+												<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+													href="https://www.facebook.com/alfaricc/" target="_blank"><img
+														src="https://russia-israel.com/uploads/dark-template/facebook.png"
+														style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+												<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+													href="https://www.instagram.com/russia_israel_com/"
+													target="_blank"><img
+														src="https://russia-israel.com/uploads/dark-template/instagram.png"
+														style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+												<a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+													href="https://t.me/russiaisraelcom" target="_blank"><img
+														src="https://russia-israel.com/uploads/dark-template/telegram.png"
+														style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+											</p>
+										</td>
+									</tr>
+									<tr>
+										<td class="footer_links"
+											style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 15px;padding-right: 20px;">
+											<table
+												style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;">
+												<tr>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div style="font-weight: bold;"><a
+																href="https://russia-israel.com/grazhdanstvo-izrailya"
+																target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">ГРАЖДАНСТВО
+																ИЗРАИЛЯ</a></div>
+													</td>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div style="font-weight: bold;"><a
+																href="https://russia-israel.com/repatriatsiya-v-izraile"
+																target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">РЕПАТРИАЦИЯ
+																В ИЗРАИЛЬ</a></div>
+													</td>
+												</tr>
+												<tr>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div style="font-weight: bold;"><a
+																href="https://support.russia-israel.com/"
+																target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">АБОНЕНТСКАЯ
+																ПОДДЕРЖКА</a></div>
+													</td>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div style="font-weight: bold;"><a
+																href="https://insurance.russia-israel.com/"
+																target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">МЕДИЦИНСКОЕ
+																СТРАХОВАНИЕ</a></div>
+													</td>
+												</tr>
+												<tr>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div><a href="https://russia-israel.com/recommend"
+																target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">Нас
+																рекомендуют</a></div>
+													</td>
+													<td
+														style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;padding-left:5px;padding-right:5px;">
+														<div><a href="https://russia-israel.com/reviews" target="_blank"
+																style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">Отзывы
+																о компании</a></div>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2"
+											style="border-top: 1px solid #455767;padding-top: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+											<p
+												style="color: #fff;font-size: 12px;padding-left: 10px;padding-right: 10px;font-family: sans-serif;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+												Вы получили данное письмо, так как подписались на рассылку ООО «РИКЦ» на
+												сайте <a href="https://russia-israel.com" target="_blank"
+													style="color: #f3f3f3;text-decoration: underline;font-size: 14px;text-align: center;white-space: nowrap;">russia-israel.com</a>.
+												Если письмо выглядит некорректно, откройте <a href="{{WebLetterUrl}}"
+													target="_blank"
+													style="color: #f3f3f3;text-decoration: underline;font-size: 14px;text-align: center;">web-версию</a>
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<!-- END MAIN CONTENT AREA -->
+					</table>
+
+					<!-- END CENTERED WHITE CONTAINER -->
+				</div>
+			</td>
+		</tr>
 	</table>
 </body>
+
 </html>
