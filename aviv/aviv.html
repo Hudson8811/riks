@@ -1,0 +1,1046 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        /* -------------------------------------
+        	GLOBAL RESETS
+    	------------------------------------- */
+        img {
+            border: none;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            font-family: sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+            border-spacing: 0;
+            border: none;
+        }
+
+        table td {
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        /* -------------------------------------
+        	BODY & CONTAINER
+    	------------------------------------- */
+
+        .body {
+            background-color: #f6f6f6;
+            width: 100% !important;
+        }
+
+        /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+        .container {
+            display: block;
+            margin: 0 auto !important;
+            /* makes it centered */
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* This should also be a block element, so that it will fill 100% of the .container */
+        .content {
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        /* -------------------------------------
+        	HEADER, FOOTER, MAIN
+    	------------------------------------- */
+        .header-logo {
+            display: block;
+            text-align: center;
+            margin: 30px 0 25px;
+        }
+
+        .header-header {
+            display: block;
+            text-align: center;
+            margin: 0;
+        }
+
+        .header-header img {
+            display: block;
+        }
+
+        .main {
+            border-spacing: 0;
+            font-family: sans-serif;
+            background-color: #fff;
+            color: #000;
+            border: none;
+        }
+
+        .wrapper {
+            box-sizing: border-box;
+            padding: 30px;
+        }
+
+        .content-block {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .footer {
+            clear: both;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* -------------------------------------
+        	TYPOGRAPHY
+    	------------------------------------- */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #000000;
+            font-family: sans-serif;
+            font-weight: 400;
+            line-height: 1.4;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        p,
+        ul,
+        ol {
+            color: #000;
+            font-family: sans-serif;
+            font-size: 0.9375rem;
+            font-weight: normal;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        p li,
+        ul li,
+        ol li {
+            list-style-position: inside;
+            margin-left: 5px;
+        }
+
+        a {
+            color: #0065b5;
+            text-decoration: underline;
+        }
+
+        /* -------------------------------------
+        	BUTTONS
+    	------------------------------------- */
+        .btn {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .btn>tbody>tr>td {
+            padding-bottom: 20px;
+        }
+
+        .btn table {
+            width: auto;
+        }
+
+        .btn table td {
+            background-color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn a {
+            font-weight: 400;
+            padding-right: 20px;
+            padding-left: 20px;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            background: #73b259;
+            border-radius: 4px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .btn-primary table td {
+            background-color: #0065b5;
+        }
+
+        .btn-primary a {
+            background-color: #0065b5;
+            border-color: #0065b5;
+            color: #ffffff;
+        }
+
+        ul {
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        /* -------------------------------------
+        	OTHER STYLES THAT MIGHT BE USEFUL
+    	------------------------------------- */
+        .last {
+            margin-bottom: 0;
+        }
+
+        .first {
+            margin-top: 0;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .mt0 {
+            margin-top: 0;
+        }
+
+        .mb0 {
+            margin-bottom: 0;
+        }
+
+        .preheader {
+            color: transparent;
+            display: none;
+            height: 0;
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+            visibility: hidden;
+            width: 0;
+        }
+
+        .powered-by a {
+            text-decoration: none;
+        }
+
+        hr {
+            border: 0;
+            border-bottom: 1px solid #f6f6f6;
+            margin: 20px 0;
+        }
+
+        h2 {
+            border-top: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 10px 0;
+            margin: 10px 0 0;
+        }
+
+        .services-item {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 20px 0;
+        }
+
+        .services-item.no-border {
+            border: none;
+        }
+
+        .services-item p {
+            margin-bottom: 10px;
+        }
+
+        .services-item a {
+            display: block;
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        table td.footer_links {
+            text-align: right;
+            padding-right: 20px;
+            padding-bottom: 15px;
+        }
+
+        /* -------------------------------------
+        	RESPONSIVE AND MOBILE FRIENDLY STYLES
+    	------------------------------------- */
+        @media only screen and (max-width: 620px) {
+            table[class=body] h1 {
+                font-size: 28px !important;
+                margin-bottom: 10px !important;
+            }
+
+            table[class=body] p,
+            table[class=body] ul,
+            table[class=body] ol,
+            table[class=body] td,
+            table[class=body] span,
+            table[class=body] a {
+                font-size: 16px !important;
+            }
+
+            table[class=body] .wrapper,
+            table[class=body] .article {
+                padding: 20px !important;
+            }
+
+            table[class=body] .content {
+                padding: 0 !important;
+            }
+
+            table[class=body] .container {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            table[class=body] .main {
+                border-left: 0 !important;
+                border-radius: 0 !important;
+                border-right: 0 !important;
+                box-shadow: none;
+            }
+
+            table[class=body] .btn table {
+                width: 100% !important;
+            }
+
+            table[class=body] .btn a {
+                width: 100% !important;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            table[class=body] .img-responsive {
+                height: auto !important;
+                max-width: 100% !important;
+                width: auto !important;
+            }
+
+            table td.footer_logo {
+                display: block;
+            }
+
+            table td.footer_links {
+                display: block;
+                text-align: center;
+                padding-right: 0;
+            }
+        }
+
+        /* -------------------------------------
+        	PRESERVE THESE STYLES IN THE HEAD
+    	------------------------------------- */
+        @media all {
+            .ExternalClass {
+                width: 100%;
+            }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+            .apple-link a {
+                color: inherit !important;
+                font-family: inherit !important;
+                font-size: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+                text-decoration: none !important;
+            }
+
+            .btn-primary table td:hover {
+                background-color: #34495e !important;
+            }
+
+            .btn-primary a:hover {
+                background-color: #34495e !important;
+                border-color: #34495e !important;
+            }
+        }
+
+
+        table[class=body] td.two-columns {
+            font-size: 0 !important;
+        }
+
+        /* .two-columns .column {
+            max-width: 100% !important;
+        }
+
+        .two-columns .feedback {
+            max-width: 50% !important;
+        }
+
+        @media only screen and (max-width:450px) {
+            .two-columns .feedback {
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+        }
+
+        @media screen and (min-width:451px) and (max-width:635px) {
+            .two-columns .feedback {
+                max-width: 50% !important;
+            }
+        } */
+    </style>
+</head>
+
+<body class=""
+    style="width: 100% !important;background-color: #e5e5e5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body"
+        style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;background-color: #e5e5e5;">
+        <tr>
+            <td class="container"
+                style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 600px;width: 100%;margin: 0 auto !important;">
+                <div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 600px;">
+                    <span class="header-header" style="display: block;text-align: center;margin: 0;"><a target="_blank"
+                            href="https://russia-israel.com/?form=open"
+                            style="color: #0065b5;text-decoration: underline;"><img
+                                src="https://uploads.russia-israel.com/aviv/logo.jpg"
+                                style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;display: block;"
+                                alt="logo"></a></span>
+
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <span class="preheader"
+                        style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
+                    <table class="main"
+                        style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;font-family: sans-serif;background-color: #eeeeee;color: #000;">
+
+                        <!-- START MAIN CONTENT AREA -->
+                        <tr>
+                            <td class="wrapper"
+                                style="padding: 36px 53px 0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="font-size: 24px;font-weight: 700;color: #1063B0;font-family: sans-serif;margin-bottom: 20px;">
+                                                {{Name | Шалом}}{{Name?, шалом}} и здравствуйте!</p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height: 24px;font-weight: 400;margin: 0;margin-bottom: 20px;">
+                                                Медицина Израиля известна на весь мир прежде всего положительными
+                                                результатами лечения и реабилитации. Добавьте сюда высокий уровень
+                                                сервиса, оснащение современным медицинским оборудованием и большой выбор
+                                                медицинских центров разного профиля, и станет очевидно, что привлекает
+                                                людей со всего мира приезжать на лечение в Израиль.</p>
+
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;font-weight: 400;margin: 0;margin-bottom: 36px;">
+                                                Но как выбрать подходящее медицинское учреждение?
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;">
+                                                <a href="https://russia-israel.ru/"> <img
+                                                        src="https://uploads.russia-israel.com/aviv/photo1.jpg"
+                                                        alt="photo-aviv"
+                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:17px 51px 0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: 700;margin: 0;margin-bottom: 25px;">
+                                                Хотим познакомить Вас с нашим партнером — многопрофильным медицинским
+                                                центром «Рамат-Авив».
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 18px;">
+                                                Медицинский центр «Рамат-Авив» был открыт в январе 1999
+                                                года. Сегодня он входит в число самых авторитетных лечебных учреждений
+                                                Израиля. В его структуре есть диагностические и лечебные отделения, а
+                                                также специализированные медицинские институты и клиники.
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 15px;">
+                                                Более того, только в «Рамат-Авив» Вы можете найти
+                                                несколько узкопрофильных институтов и центров, которым нет аналогов в
+                                                Израиле и во всем ближневосточном регионе. Например, уникальная клиника
+                                                терапии болевого синдрома (англ. Pain Clinic), специалисты которой
+                                                эффективно лечат хроническую боль.
+
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 23px;">
+                                                Список направлений, которые предлагает Медицинский центр «Рамат-Авив»,
+                                                очень широк, чтобы рассказать обо всех в рамках одного письма, поэтому
+                                                мы остановимся только на нескольких, наиболее востребованных.
+
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;">
+                                                <a href="https://russia-israel.ru/"> <img
+                                                        src="https://uploads.russia-israel.com/aviv/photo2.jpg"
+                                                        alt="photo-aviv"
+                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:20px 51px 0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 0px;">
+                                                <strong>Озонотерапия —</strong> высокоэффективный метод лечения, который
+                                                помогает поправить здоровье при самых различных заболеваниях, от
+                                                нарушений кровообращения до онкологии.
+                                            </p>
+                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;margin-bottom: 19px;">
+                                                <tr>
+                                                    <td
+                                                        style="width: 38px;height: 33px;vertical-align:center;padding-right: 9px;">
+                                                        <img src="https://uploads.russia-israel.com/aviv/document.png"
+                                                            alt="document-icon" style="width: 38px;
+                                                    height: 33px;">
+                                                    </td>
+                                                    <td style="vertical-align:middle;">
+                                                        <p
+                                                            style="color: #000;font-family: sans-serif;font-size: 1rem;font-weight: 400;margin: 0;margin-bottom: 0px;">
+                                                            <a href="">Скачать презентацию озонотерапии</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 0px;">
+                                                <strong>Инфузионная витаминная терапия —</strong> значительно сокращает
+                                                восстановительный период после различных заболеваний, травм,
+                                                перенесенных оперативных вмешательств. Особенно при совместном
+                                                применении инфузии витаминов и минералов с озонотерапией.
+
+                                            </p>
+                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;margin-bottom: 19px;">
+                                                <tr>
+                                                    <td
+                                                        style="width: 38px;height: 33px;vertical-align:center;padding-right: 9px;">
+                                                        <img src="https://uploads.russia-israel.com/aviv/document.png"
+                                                            alt="document-icon" style="width: 38px;
+                                                height: 33px;">
+                                                    </td>
+                                                    <td style="vertical-align:middle;">
+                                                        <p
+                                                            style="color: #000;font-family: sans-serif;font-size: 1rem;font-weight: 400;margin: 0;margin-bottom: 0px;">
+                                                            <a href="">Скачать презентацию витаминотерапии</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 0px;">
+                                                <strong>Диагностические программы.</strong> Одним из важнейших факторов
+                                                успешного выздоровления является своевременная и качественная
+                                                диагностика, необходимая для определения методов лечения. Медицинский
+                                                центр «Рамат-Авив» предлагает программы диагностики, учитывающие
+                                                особенности и наиболее актуальные направления для всех возрастов.
+                                            </p>
+                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;margin-bottom: 30px;">
+                                                <tr>
+                                                    <td
+                                                        style="width: 38px;height: 33px;vertical-align:center;padding-right: 9px;">
+                                                        <img src="https://uploads.russia-israel.com/aviv/document.png"
+                                                            alt="document-icon" style="width: 38px;
+                                                height: 33px;">
+                                                    </td>
+                                                    <td style="vertical-align:middle;">
+                                                        <p
+                                                            style="color: #000;font-family: sans-serif;font-size: 1rem;font-weight: 400;margin: 0;margin-bottom: 0px;">
+                                                            <a href="">Скачать презентации диагностических програм</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;">
+                                                <a href="https://russia-israel.ru/"> <img
+                                                        src="https://uploads.russia-israel.com/aviv/photo3.jpg"
+                                                        alt="photo-aviv"
+                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:27px 51px 0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: 700;margin: 0;margin-bottom: 19px;">
+                                                Ещё одно преимущество Медицинского центра «Рамат-Авив», на которое хотим
+                                                обратить внимание — это удобство расположения.
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 19px;">
+                                                Вы сможете легко добраться до «Рамат-Авив» из любого уголка Израиля, так
+                                                как рядом пролегают основные транспортные магистрали, а сам медицинский
+                                                центр расположен в престижном северном районе Тель-Авива в одноименном
+                                                бизнес-центре.
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 35px;">
+                                                Тель-Авив находится на побережье Средиземного моря. Это даёт возможность
+                                                совместить лечение с отдыхом. Поблизости от центра есть чистые пляжи,
+                                                уютные кафе и фешенебельные рестораны на любой вкус, торговые центры и
+                                                музеи, а также исторические достопримечательности.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 10px;">
+                                                <a href="https://russia-israel.ru/"> <img
+                                                        src="https://uploads.russia-israel.com/aviv/photo4.jpg"
+                                                        alt="photo-aviv"
+                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="padding:15px 51px 0px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td
+                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: 700;margin: 0;margin-bottom: 19px;">
+                                                РИКЦ предлагает Вам возможность лечиться и получать медицинские услуги в
+                                                центре «Рамат-Авив» с большей выгодой, оформив с нами частную
+                                                медицинскую страховку.
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 19px;">
+                                                Специалисты РИКЦ помогут подобрать медицинскую страховку, учитывая Вашу
+                                                индивидуальную ситуацию, состояние здоровья, сопроводят при оказании
+                                                медицинских услуг в центре «Рамат-Авив», где Вы гарантированно получите
+                                                высокий уровень сервиса и максимальный комфорт.
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 35px;">
+                                                Для клиентов РИКЦ медицинский центр «Рамат-Авив» предлагает особые
+                                                выгодные условия!
+                                            </p>
+                                            <p
+                                                style="color: #000;font-family: sans-serif;font-size: 1rem;line-height:1.5rem;font-weight: normal;margin: 0;margin-bottom: 19px;">
+                                                Позаботьтесь о своем здоровье уже сейчас и запишитесь на бесплатную
+                                                консультацию специалиста по медицинскому страхованию!
+                                            </p>
+                                            <p
+                                                style="text-align: center;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 30px;">
+                                                <a target="_blank" href="https://russia-israel.com/?quiz=open"
+                                                    style="color: #0065b5;text-decoration: underline;">
+                                                    <img src="https://uploads.russia-israel.com/aviv/button2.png"
+                                                        alt="button"
+                                                        style="max-width: 262px; width: 100%; border: none;-ms-interpolation-mode: bicubic;">
+                                                </a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td
+                                style="text-align: center;background-color: #1063B0;padding-top: 25px;padding-bottom: 20px;padding-left: 30px;padding-right: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td class="two-columns"
+                                            style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;text-align:center">
+                                            <div class="column"
+                                                style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:135px;text-align:left;vertical-align:top;width:100%;margin-bottom: 13px;">
+                                                <table width="100%" cellpadding="0" style="border-collapse:collapse">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="-webkit-font-smoothing:subpixel-antialiased;padding-right: 13px;vertical-align: middle;">
+                                                                <p
+                                                                    style="color: #000;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+                                                                    <img src="https://uploads.russia-israel.com/aviv/telegram-logo-min.png"
+                                                                        alt="telegram-logo-min"
+                                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="column"
+                                                style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:398px;text-align:left;vertical-align:middle;width:100%;margin-bottom: 5px;">
+                                                <table width="100%" cellpadding="0" style="border-collapse:collapse">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="-webkit-font-smoothing:subpixel-antialiased;vertical-align: middle;">
+                                                                <p
+                                                                    style="color: #fff;font-size: 14px;margin-bottom: 10px;font-family: sans-serif;font-weight: normal;">
+                                                                    Самую актуальную и свежую информацию о гражданстве
+                                                                    Израиля и вопросах, которые возникают после его
+                                                                    получения, мы публикуем в Telegram-канале РИКЦ.
+                                                                    <br><br>Подписывайтесь и будьте в курсе!</p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p
+                                                style="color: #fff;text-align:center;margin-bottom: 20px;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-top: 10px">
+                                                <a href="https://t.me/russiaisraelcom"
+                                                    style="color: #0065b5;text-decoration: underline;">
+                                                    <img src="https://uploads.russia-israel.com/aviv/button6.png"
+                                                        alt="telegram-btn"
+                                                        style="max-width: 262px; width:100%;border: none;-ms-interpolation-mode: bicubic;">
+                                                </a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+
+
+
+                        <tr>
+                            <td class="vadim-block" bgcolor="#3387b5"
+                                style="text-align: center;padding-top: 18px;padding-bottom: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;border: none;background:url(https://uploads.russia-israel.com/aviv/osnova.jpg)  no-repeat; background-size:cover "
+                                background="#F1F1F1">
+
+                                <img src="https://uploads.russia-israel.com/aviv/vadim.png" alt="vadim-photo"
+                                    width="100" height="100"
+                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                <p
+                                    style="color: #fff;padding-top: 10px;font-weight: 500;font-size: 14px;line-height: 1;margin-bottom: 20px;font-family: sans-serif;margin: 0;">
+                                    С уважением, Вадим Жоров</p>
+
+                                <hr
+                                    style="display: block;height: 1px;width: 200px;background-color: #CB9917;border:0;margin: 0;margin-left: auto;margin-right: auto;margin-top: 10px;margin-bottom: 10px;">
+
+                                <p
+                                    style="color: #fff;margin-bottom: 20px;font-family: sans-serif;font-size: 14px;font-weight: 500;margin: 0;border:0; background:transparent;outline: none">
+                                    Основатель РИКЦ</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="footer"
+                                style="background: linear-gradient(180deg, #0065B1 0%, #062141 100%);;padding-top: 25px;margin-top: 10px;padding-right:25px;padding-left:25px;font-family: sans-serif;font-size: 14px;vertical-align: top;clear: both;text-align: center;width: 100%;border:none;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                    <tr>
+                                        <td class="two-columns"
+                                            style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;text-align:center">
+                                            <div class="column"
+                                                style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:45%;text-align:left;vertical-align:top;width:100%;margin-bottom: 13px;">
+                                                <table width="100%" cellpadding="0" style="border-collapse:collapse">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td
+                                                                style="-webkit-font-smoothing:subpixel-antialiased;padding-right: 13px;vertical-align: top;">
+                                                                <p
+                                                                    style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 70px;text-align: left;">
+                                                                    <img src="https://uploads.russia-israel.com/aviv/footer-logo.png"
+                                                                        alt="footer-logo" width="138px"
+                                                                        style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td
+                                                                style="-webkit-font-smoothing:subpixel-antialiased;padding-right: 10px;vertical-align: top;">
+                                                                <p
+                                                                    style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;text-align: left;">
+                                                                    <a href="https://www.youtube.com/channel/UChkKRDcO3aYoowaoLonh-KA"
+                                                                        target="_blank"
+                                                                        style="margin-right:10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"><img
+                                                                            alt="icon"
+                                                                            src="https://uploads.russia-israel.com/aviv/youtube.png"
+                                                                            style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                                    <a style="margin-right:10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                        href="https://www.facebook.com/alfaricc/"
+                                                                        target="_blank"><img alt="icon"
+                                                                            src="https://uploads.russia-israel.com/aviv/facebook.png"
+                                                                            style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                                    <a style="margin-right:10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                        href="https://www.instagram.com/russia_israel_com/"
+                                                                        target="_blank"><img alt="icon"
+                                                                            src="https://uploads.russia-israel.com/aviv/instagram.png"
+                                                                            style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                                    <a style="color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                        href="https://t.me/russiaisraelcom"
+                                                                        target="_blank"><img alt="icon"
+                                                                            src="https://uploads.russia-israel.com/aviv/telegram.png"
+                                                                            style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="column"
+                                                style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:55%;text-align:left;vertical-align:middle;width:100%;margin-bottom: 13px;">
+                                                <table width="100%" cellpadding="0" style="border-collapse:collapse">
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td class="footer_links"
+                                                                style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 15px;">
+                                                                <table
+                                                                    style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;">
+                                                                    <tr>
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div style="font-weight: bold;"><a
+                                                                                    href="https://russia-israel.com/grazhdanstvo-izrailya"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">ГРАЖДАНСТВО
+                                                                                    ИЗРАИЛЯ</a></div>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div style="font-weight: bold;"><a
+                                                                                    href="https://russia-israel.com/repatriatsiya-v-izraile"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">РЕПАТРИАЦИЯ
+                                                                                    В ИЗРАИЛЬ</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div style="font-weight: bold;"><a
+                                                                                    href="https://russia-israel.com/abonentskoe-obsluzhivanie"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">АБОНЕНТСКАЯ
+                                                                                    ПОДДЕРЖКА</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div style="font-weight: bold;"><a
+                                                                                    href="https://insurance.russia-israel.com/"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">МЕДИЦИНСКОЕ
+                                                                                    СТРАХОВАНИЕ</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div><a href="https://russia-israel.com/recommend"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">Нас
+                                                                                    рекомендуют</a></div>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+
+                                                                        <td
+                                                                            style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: right;padding-bottom: 10px;">
+                                                                            <div><a href="https://russia-israel.com/reviews"
+                                                                                    target="_blank"
+                                                                                    style="text-decoration: none;color: #fff;font-size: 12px;text-align: right;">Отзывы
+                                                                                    о компании</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table
+                                    style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+
+                                    <tr>
+                                        <td colspan="2"
+                                            style="border-top: 1px solid #455767;padding-top: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+                                            <p
+                                                style="color: #a6afda;font-size: 12px;padding-left: 10px;padding-right: 10px;font-family: sans-serif;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+                                                Вы получили данное письмо, так как подписались на рассылку ООО «РИКЦ» на
+                                                сайте <a href="https://russia-israel.com" target="_blank"
+                                                    style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;white-space: nowrap;">russia-israel.com</a>.
+                                                Если письмо выглядит некорректно, откройте <a href="{{WebLetterUrl}}"
+                                                    target="_blank"
+                                                    style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;">web-версию</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- END MAIN CONTENT AREA -->
+                            </td>
+                        </tr>
+
+                        <!-- END MAIN CONTENT AREA -->
+                    </table>
+
+                    <!-- END CENTERED WHITE CONTAINER -->
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
