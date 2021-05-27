@@ -1,0 +1,1181 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        /* -------------------------------------
+        	GLOBAL RESETS
+    	------------------------------------- */
+        img {
+            border: none;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%;
+        }
+
+        body {
+            background-color: #f6f6f6;
+            font-family: sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table {
+            border-collapse: separate;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        table td {
+            font-family: sans-serif;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        /* -------------------------------------
+        	BODY & CONTAINER
+    	------------------------------------- */
+
+        .body {
+            background-color: #f6f6f6;
+            width: 100% !important;
+        }
+
+        /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+        .container {
+            display: block;
+            margin: 0 auto !important;
+            /* makes it centered */
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* This should also be a block element, so that it will fill 100% of the .container */
+        .content {
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        /* -------------------------------------
+        	HEADER, FOOTER, MAIN
+    	------------------------------------- */
+        .header-logo {
+            display: block;
+            text-align: center;
+            margin: 30px 0 25px;
+        }
+
+        .header-header {
+            display: block;
+            text-align: center;
+            margin: 0;
+        }
+
+        .header-header img {
+            display: block;
+        }
+
+        .main {
+            border-spacing: 0;
+            font-family: sans-serif;
+            background-color: #081e33;
+            color: #fff;
+            border: none;
+        }
+
+        .wrapper {
+            box-sizing: border-box;
+            padding: 30px;
+        }
+
+        .content-block {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .footer {
+            clear: both;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* -------------------------------------
+        	TYPOGRAPHY
+    	------------------------------------- */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #000000;
+            font-family: sans-serif;
+            font-weight: 400;
+            line-height: 1.4;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 300;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        p,
+        ul,
+        ol {
+            color: #fff;
+            font-family: sans-serif;
+            font-size: 0.9375rem;
+            letter-spacing: 0.032em;
+            font-weight: normal;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        p li,
+        ul li,
+        ol li {
+            list-style-position: inside;
+            margin-left: 5px;
+        }
+
+        a {
+            color: #0065b5;
+            text-decoration: underline;
+        }
+
+        /* -------------------------------------
+        	BUTTONS
+    	------------------------------------- */
+        .btn {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .btn>tbody>tr>td {
+            padding-bottom: 20px;
+        }
+
+        .btn table {
+            width: auto;
+        }
+
+        .btn table td {
+            background-color: #ffffff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btn a {
+            font-weight: 400;
+            padding-right: 20px;
+            padding-left: 20px;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            background: #73b259;
+            border-radius: 4px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .btn-primary table td {
+            background-color: #0065b5;
+        }
+
+        .btn-primary a {
+            background-color: #0065b5;
+            border-color: #0065b5;
+            color: #ffffff;
+        }
+
+        ul {
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        /* -------------------------------------
+        	OTHER STYLES THAT MIGHT BE USEFUL
+    	------------------------------------- */
+        .last {
+            margin-bottom: 0;
+        }
+
+        .first {
+            margin-top: 0;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .mt0 {
+            margin-top: 0;
+        }
+
+        .mb0 {
+            margin-bottom: 0;
+        }
+
+        .preheader {
+            color: transparent;
+            display: none;
+            height: 0;
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+            visibility: hidden;
+            width: 0;
+        }
+
+        .powered-by a {
+            text-decoration: none;
+        }
+
+        hr {
+            border: 0;
+            border-bottom: 1px solid #f6f6f6;
+            margin: 20px 0;
+        }
+
+        h2 {
+            border-top: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 10px 0;
+            margin: 10px 0 0;
+        }
+
+        .services-item {
+            border-bottom: 1px solid #e6e6e6;
+            padding: 20px 0;
+        }
+
+        .services-item.no-border {
+            border: none;
+        }
+
+        .services-item p {
+            margin-bottom: 10px;
+        }
+
+        .services-item a {
+            display: block;
+            margin: 0 0 10px;
+            font-size: 16px;
+        }
+
+        table td.footer_links {
+            text-align: right;
+            padding-right: 20px;
+            padding-bottom: 15px;
+        }
+
+        /* -------------------------------------
+        	RESPONSIVE AND MOBILE FRIENDLY STYLES
+    	------------------------------------- */
+        @media only screen and (max-width: 620px) {
+            table[class=body] h1 {
+                font-size: 28px !important;
+                margin-bottom: 10px !important;
+            }
+
+
+
+            table[class=body] .content {
+                padding: 0 !important;
+            }
+
+            table[class=body] .container {
+                padding: 0 !important;
+                width: 100% !important;
+            }
+
+            table[class=body] .main {
+                border-left: 0 !important;
+                border-radius: 0 !important;
+                border-right: 0 !important;
+                box-shadow: none;
+            }
+
+            table[class=body] .btn table {
+                width: 100% !important;
+            }
+
+            table[class=body] .btn a {
+                width: 100% !important;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            table[class=body] .img-responsive {
+                height: auto !important;
+                max-width: 100% !important;
+                width: auto !important;
+            }
+
+            table td.footer_logo {
+                display: block;
+            }
+
+            table td.footer_links {
+                display: block;
+                text-align: center;
+                padding-right: 0;
+            }
+        }
+
+        /* -------------------------------------
+        	PRESERVE THESE STYLES IN THE HEAD
+    	------------------------------------- */
+        @media all {
+            .ExternalClass {
+                width: 100%;
+            }
+
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+
+            .apple-link a {
+                color: inherit !important;
+                font-family: inherit !important;
+                font-size: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+                text-decoration: none !important;
+            }
+
+            .btn-primary table td:hover {
+                background-color: #34495e !important;
+            }
+
+            .btn-primary a:hover {
+                background-color: #34495e !important;
+                border-color: #34495e !important;
+            }
+        }
+
+        table[class=body] td.two-columns {
+            font-size: 0 !important;
+        }
+
+        .two-columns .column {
+            max-width: 285px
+        }
+
+        border-radius {
+            border-radius: 7px 0 0 7px;
+        }
+
+        @media only screen and (max-width:599px) {
+            .button-wrapper {
+                text-align: center !important;
+            }
+        }
+
+
+
+        /* .two-columns .column-img {
+            max-width: 250px !important;
+		}
+		
+		.two-columns .column-text {
+        	max-width: 290px !important;
+        }
+
+        @media only screen and (max-width:450px) {
+            .two-columns .column-text {
+                max-width: 100%!important;
+                text-align: center !important;
+            }
+        }  */
+
+        /* @media screen and (min-width:450px) and (max-width:635px) {
+			.two-columns .column {
+				max-width: 100% !important;
+			} */
+
+        /* .two-columns .column-img {
+				max-width: 50% !important;
+			} */
+
+        /* .telegram {
+				padding-left: 0 !important;
+			}
+		}   */
+    </style>
+</head>
+
+<body class=""
+    style="width: 100% !important;background-color: #f6f6f6;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <table border="0" cellpadding="0" cellspacing="0" class="body"
+        style="width: 100% !important;border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;background-color: #f6f6f6;">
+        <tr>
+            <td class="container"
+                style="font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 600px;width: 100%;margin: 0 auto !important;">
+                <div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 600px;">
+                    <span class="header-header" style="display: block;text-align: center;margin: 0;"><a
+                            href="https://russia-israel.com/abonentskoe-obsluzhivanie"><img
+                                src="https://uploads.russia-israel.com/problem/logo.png"
+                                style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;display: block;"></a></span>
+                    <!-- START CENTERED WHITE CONTAINER -->
+                    <span class="preheader"
+                        style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
+                    <table class="main"
+                        style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;font-family: sans-serif;background-color: #081e33;color: #fff;border: none;">
+
+                        <!-- START MAIN CONTENT AREA -->
+                        <tr>
+                            <td class="wrapper"
+                                style="font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 37px 0px 0;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;">
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 16px;vertical-align: top;padding-left: 50px;padding-right: 50px;">
+                                            <p
+                                                style="font-size: 24px;font-weight: 400;margin: 0;margin-bottom: 36px;color: #FFB800;font-family: sans-serif;">
+                                                {{Name|Шалом}}{{Name?, шалом}} и здравствуйте!</p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Сегодня расскажем о самых востребованных направления медицинских услуг в
+                                                Израиле, какую страховку выбрать, чтобы иметь доступ к одной из лучших
+                                                медицин мира и дадим пять советов, если Вы решите лечиться в Израиле.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                Список медицинских услуг, оказываемых в клиниках Израиля практически
+                                                неограничен. Однако среди людей, приезжающих на лечение из других стран,
+                                                в том числе из РФ, наиболее востребовано лечение заболеваний в следующих
+                                                областях:
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                <span style="color: #EFD210;font-weight: 700;">1)</span> онкология,
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                <span style="color: #EFD210;font-weight: 700;">2)</span>
+                                                онкогематология,
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                <span style="color: #EFD210;font-weight: 700;">3)</span> нейрохирургия,
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                <span style="color: #EFD210;font-weight: 700;">4)</span> ортопедия и
+                                                лечение опорно-двигательного аппарата,
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                <span style="color: #EFD210;font-weight: 700;">5)</span> репродуктивная
+                                                медицина.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 21px;line-height: 24px;">
+                                                Все медицинские услуги платные, поэтому каждый гражданин страны обязан
+                                                иметь медицинскую страховку – так гласит закон. Бесплатного лечения в
+                                                Израиле нет.
+                                            </p>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="wrapper"
+                                style="font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 0px 0px 0;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;">
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 0px;padding-right: 0px;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 0px;padding-top: 10px;">
+                                                <img src="https://uploads.russia-israel.com/page25/photo1.jpg" alt="bg1"
+                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="wrapper"
+                                style="font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;padding: 30px 0px 0;">
+                                <table border="0" cellpadding="0" cellspacing="0"
+                                    style="border-collapse: separate;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;">
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 50px;padding-right: 50px;">
+
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 24px;font-weight: 400;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Какую страховку выбрать резиденту
+                                                и нерезиденту Израиля?
+                                            </p>
+                                            <p
+                                                style="color: 
+                                                #F9B609;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Страховка для новых репатриантов и резидентов
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 19px;line-height: 24px;">
+                                                Каждый новый репатриант имеет право на бесплатную государственную
+                                                страховку — так называемую корзину медицинских услуг — это базовая
+                                                страховка, с ограниченным перечнем услуг, которая даётся бесплатно и
+                                                действует первые шесть месяцев после репатриации.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 19px;line-height: 24px;">
+                                                В базовой страховке выбор врача и клиники возможен, но очередь может
+                                                растянуться на несколько недель, время посещения не всегда удобно, а
+                                                ждать бесплатной операции иногда приходится больше года. В стационар
+                                                обладателей базовой страховки кладут редко.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 19px;line-height: 24px;">
+                                                Для повышения комфорта и расширения спектра услуг, новые репатрианты и
+                                                резиденты Израиля могут оформить расширенную государственную медицинскую
+                                                страховку через больничную кассу, дающую многие привилегии. Это довольно
+                                                простой и недорогой вариант для тех кто остаётся в Израиле.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 19px;line-height: 24px;">
+                                                Наша компания готова помочь оформить Вам медицинскую страховку в купат
+                                                холим на наиболее выгодных условиях. С нами вы сможете быстро и без
+                                                лишних проблем в полной мере пользоваться государственной медициной
+                                                Израиля.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 19px;line-height: 24px;">
+                                                Мы можем организовать для Вас:
+                                            </p>
+
+                                            <table>
+                                                <tr>
+                                                    <td
+                                                        style="padding-right: 10px;width: 17px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Выбор лучших врачей или клиник нужной специализации,
+                                                        опираясь на опыт и отзывы наших клиентов.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px; width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Сопровождением к врачу или в клинику.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px;width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Согласование и подбор удобных дат посещения и лечения.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px;width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Не только лечение, но и возможность отдыха для Вас,
+                                                        Вашей семьи или сопровождающих.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 0px;padding-right: 0px;">
+                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;"
+                                                align="center"><a
+                                                    href="https://insurance.russia-israel.com/?form=opened&utm_source=email"
+                                                    target="_blank"><img style="width: 100%; max-width: 304 px;"
+                                                        src="https://uploads.russia-israel.com/page25/button1.png"
+                                                        alt=""></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 50px;padding-right: 50px;padding-top: 11px;">
+
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Страховка для нерезидентов.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Если Вы не живёте в Израиле постоянно, то спустя год после получения
+                                                гражданства государственная страховка аннулируется. Восстановить ее
+                                                можно через 6 месяцев, при этом все это время нужно жить в стране без
+                                                права на медицинскую помощь или заплатить штраф около 12 000 ₪ с
+                                                человека.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Некоторые больничные кассы предлагают страховку для нерезидентов. Но эти
+                                                полисы дорогие — в 4-5 раз дороже страховки для резидентов. Чтобы
+                                                избежать ненужных трат, рекомендуем оформить частную медицинскую
+                                                страховку до истечения года со дня получения израильского гражданства.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                С частной страховкой Вы сможете получать пожизненную медицинскую помощь
+                                                в Израиле независимо от страны проживания, оперативно и качественно
+                                                решить любую проблему со здоровьем. Лучшие врачи и лучшие клиники
+                                                Израиля всегда к вашим услугам
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                При нашем содействии процедура оформления частной страховки проходит от
+                                                5 дней. Выбрать подходящий Вам пакет страхования поможет небольшой тест,
+                                                разработанный специалистами РИКЦ, чтобы определить оптимальную
+                                                страховку.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Мы предлагаем три направления для страхования
+                                            </p>
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 36px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Хирургия
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Частные хирургические операции и процедуры заменяющие операции за
+                                                границей
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Покрытие включает в себя оплату услуг хирурга и анестезиолога, расходы
+                                                на оплату операционной и расходы на госпитализацию максимум до 30 дней,
+                                                патологическое и гистологическое исследования, имплантаты до 55 000
+                                                шекелей, микрофаги до 10 000 шекелей, покрытие в соответствии с
+                                                максимальной величиной покрытия для данной больницы и хирурга по
+                                                соглашению со страховой компанией застрахованного. <a
+                                                    href="https://insurance.russia-israel.com/#popup:infoblock"
+                                                    style="color: #207EBE;font-weight: 700;">Узнать подробнее</a>
+                                            </p>
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 36px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Трансплантация
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Трансплантация и специальные процедуры за рубежом.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Программа трансплантации предлагает широкий спектр покрытия, независимо
+                                                от больничной кассы страхователя.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Покрытие охватывает широкий спектр видов трансплантатов: легких, сердца,
+                                                почек, печени, яичников, кишечника, костного мозга, стволовых клеток.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                По соглашению с компанией — без ограничений и до 5 000 000 шекелей в
+                                                клиниках, не работающих по соглашению с компанией.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Имплантация искусственного органа — до 2 500 000, в зависимости от
+                                                соглашения с поставщиком. <a
+                                                    href="https://insurance.russia-israel.com/#popup:infoblock"
+                                                    style="color: #207EBE;font-weight: 700;">Узнать подробнее</a>
+                                            </p>
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 36px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Лекарства
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Лекарства и препараты специального назначения
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Покрытие на препараты, не включенные в корзину здравоохранения до
+                                                максимальной суммы в 3 000 000₪ на страховой случай, возобновляется с
+                                                обновлением страхового периода.
+                                                <a href="https://insurance.russia-israel.com/#popup:infoblock"
+                                                    style="color: #207EBE;font-weight: 700;">Узнать подробнее</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 40px;padding-right: 40px;">
+                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;"
+                                                align="center"><a
+                                                    href="https://insurance.russia-israel.com/?marquiz=open"
+                                                    target="_blank"><img style="width: 100%; max-width: 304px;"
+                                                        src="https://uploads.russia-israel.com/page25/button2.png"
+                                                        alt=""></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: px;padding-right: px;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;padding-top: 25px;">
+
+                                                <img src="https://uploads.russia-israel.com/page25/photo2.jpg" alt=""
+                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                            </p>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 50px;padding-right: 50px;padding-top: 11px;">
+
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 24px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Преимущества лечения в Израиле
+                                                для Россиян
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Даже если Вы не владеете английским языком или ивритом достаточно
+                                                хорошо, беспокоиться не стоит: при крупных клиниках Израиля есть отделы
+                                                по работе с пациентами из-за рубежа и в том числе сотрудники, которые
+                                                говорят на русском языке.
+                                            </p>
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Пять советов тем, кто самостоятельно решил отправиться
+                                                на лечение в Израиль.
+                                            </p>
+                                            <table>
+                                                <tr>
+                                                    <td
+                                                        style="padding-right: 10px;width: 17px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Выбирайте проверенных врачей, клиники и организаторов
+                                                        лечения, лучше по рекомендациям людей, которым Вы
+                                                        доверяете.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px; width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Перед тем, как соглашаться на какие-либо крупные
+                                                        операции – при возможности узнайте второе мнение от
+                                                        других, независимых, специалистов.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px;width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Требуйте от организатора лечения оригинальную смету
+                                                        от клиники и четкое объяснение сумм, которые Вас просят
+                                                        заплатить.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-right: 10px;width: 17px;">
+                                                        <img src="https://uploads.russia-israel.com/page7/check.png"
+                                                            alt="" width="17" height="15">
+                                                    </td>
+                                                    <td
+                                                        style="padding-bottom: 30px;color: #f2f2f2;font-family: sans-serif;font-size: 1rem;line-height:24px;font-weight: 400;margin: 0;margin-bottom: 18px;">
+                                                        Закладывайте в свой бюджет возможные непредвиденные
+                                                        расходы.
+                                                    </td>
+                                                </tr>
+                                                <p
+                                                    style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                    Нерезидентам Израиля зачастую бывает очень непросто разобраться во
+                                                    всех нюансах оказания медицинских услуг и ценообразования. Поэтому,
+                                                    если Вы хотите воспользоваться медицинскими услугами в Израиле,
+                                                    специалисты РИКЦ готовы помочь Вам «открыть нужные двери», получить
+                                                    срочную очередь на диагностику у лучших специалистов, организовать
+                                                    все аспекты пребывания в Израиле
+                                                </p>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: px;padding-right: px;">
+                                            <p
+                                                style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;padding-top: 25px;">
+
+                                                <img src="https://uploads.russia-israel.com/page25/photo3.jpg" alt=""
+                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 50px;padding-right: 50px;padding-top: 11px;">
+
+                                            <p
+                                                style="color: #F9B609;font-family: sans-serif;font-size: 24px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Наш партнер — Menora Mivtachim
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Одна из старейших страховых компаний Израиля, которая была основана в
+                                                1935 году, и при этом единственная компания в Израиле, которая
+                                                предлагает страховку, которой можно воспользоваться из любой точки
+                                                планеты.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Специалисты Menora Mivtachim разработали спектр различных программ. Сюда
+                                                могут входить стоматологические, диагностические услуги, лекарственные
+                                                препараты, не включенные в основной список и прочее.
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                <a href="https://russia-israel.com/blog/menora-mivtachim.html"
+                                                    style="color: #207EBE;font-weight: 700;">Узнать подробнее об
+                                                    услугах Menora
+                                                    Mivtachim</a>
+                                            </p>
+                                            <p
+                                                style="color: #F2F2F2;font-family: sans-serif;font-size: 16px;font-weight: normal;margin: 0;margin-bottom: 20px;line-height: 24px;">
+                                                Остались вопросы?<br>
+                                                Наш специалист по страхованию в Израиле готов связаться с Вами прямо
+                                                сейчас
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="font-family: sans-serif;font-size: 14px;vertical-align: top;padding-left: 40px;padding-right: 40px;">
+                                            <p style="color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 30px;"
+                                                align="center"><a
+                                                    href="https://insurance.russia-israel.com/?form=opened&utm_source=email"
+                                                    target="_blank"><img style="width: 100%; max-width: 427px;"
+                                                        src="https://uploads.russia-israel.com/page25/button3.png"
+                                                        alt=""></a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="telegram"
+                                            style="text-align: center;background-color: #13304B;padding-top: 25px;padding-bottom: 20px;padding-left: 50px;padding-right: 42px;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+
+                                            <table border="0" cellpadding="0" cellspacing="0"
+                                                style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                                <tr>
+                                                    <td class="two-columns"
+                                                        style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;text-align:center">
+                                                        <div class="column"
+                                                            style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:128px;text-align:left;vertical-align:top;width:100%;margin-bottom: 13px;">
+                                                            <table width="100%" cellpadding="0"
+                                                                style="border-collapse:collapse">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="-webkit-font-smoothing:subpixel-antialiased;padding-right: 20px;vertical-align: middle;">
+                                                                            <p class="center"
+                                                                                style="color: #000;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;">
+                                                                                <img src="https://uploads.russia-israel.com/problem/telegram-logo-min.png"
+                                                                                    alt=""
+                                                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                                        <div class="column"
+                                                            style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:379px;text-align:left;vertical-align:middle;width:100%;margin-bottom: 13px;">
+                                                            <table width="100%" cellpadding="0"
+                                                                style="border-collapse:collapse">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td
+                                                                            style="-webkit-font-smoothing:subpixel-antialiased;padding-left: 0px;;vertical-align: middle;">
+                                                                            <p
+                                                                                style="color: #fff;font-size: 14px;margin-bottom: 20px;font-family: sans-serif;font-weight: normal;">
+                                                                                Самую актуальную и
+                                                                                свежую
+                                                                                информацию о
+                                                                                гражданстве
+                                                                                Израиля и вопросах,
+                                                                                которые
+                                                                                возникают после его
+                                                                                получения, мы
+                                                                                публикуем в
+                                                                                Telegram-канале
+                                                                                РИКЦ.
+                                                                                <br><br>Подписывайтесь
+                                                                                и будьте
+                                                                                в курсе!</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p class="button-wrapper"
+                                                            style="color: #fff;text-align:center;margin-bottom: 20px;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+                                                            <a href="https://t.me/russiaisraelcom"
+                                                                style="color: #0065b5;text-decoration: underline;"
+                                                                target="_blank">
+                                                                <img src="https://uploads.russia-israel.com/page12/button5.png"
+                                                                    alt=""
+                                                                    style="max-width: 262px;border: none;-ms-interpolation-mode: bicubic;width:100%;">
+                                                            </a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="vadim-block"
+                                            style="text-align: center;padding-top: 30px;padding-bottom: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;border: none;"
+                                            background="#F1F1F1">
+
+                                            <img src="https://uploads.russia-israel.com/problem/vadim.png" alt=""
+                                                width="118px" height="118px"
+                                                style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                            <p
+                                                style="color: #fff;padding-top: 10px;font-weight: 500;font-size: 14px;line-height: 1;margin-bottom: 20px;font-family: sans-serif;margin: 0;">
+                                                С уважением, Вадим Жоров</p>
+                                            <hr
+                                                style="display: block;height: 1px;width: 200px;background-color: #CB9917;border:0;margin: 0;margin-left: auto;margin-right: auto;margin-top: 10px;margin-bottom: 10px;">
+                                            <p
+                                                style="color: #fff;margin-bottom: 20px;font-family: sans-serif;font-size: 14px;font-weight: 500;margin: 0;">
+                                                Основатель РИКЦ</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="footer"
+                                            style="background:linear-gradient(180deg, #0065B1 0%, #062141 100%); background-color: #131D4D;padding-top: 30px;margin-top: 10px;font-family: sans-serif;font-size: 14px;vertical-align: top;clear: both;text-align: center;width: 100%;">
+                                            <table
+                                                style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+                                                <tr>
+                                                    <td class="footer_logo"
+                                                        style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+                                                        <p
+                                                            style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+                                                            <img src="https://uploads.russia-israel.com/problem/footer-logo.png"
+                                                                alt="" width="138px"
+                                                                style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+                                                        </p>
+                                                        <p
+                                                            style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+                                                            <a href="https://www.youtube.com/channel/UChkKRDcO3aYoowaoLonh-KA"
+                                                                target="_blank"
+                                                                style="color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"><img
+                                                                    src="https://uploads.russia-israel.com/problem/youtube.png"
+                                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                            <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                href="https://www.facebook.com/alfaricc/"
+                                                                target="_blank"><img
+                                                                    src="https://uploads.russia-israel.com/problem/facebook.png"
+                                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                            <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                href="https://www.instagram.com/russia_israel_com/"
+                                                                target="_blank"><img
+                                                                    src="https://uploads.russia-israel.com/problem/instagram.png"
+                                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                            <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"
+                                                                href="https://t.me/russiaisraelcom" target="_blank"><img
+                                                                    src="https://uploads.russia-israel.com/problem/telegram.png"
+                                                                    style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="footer_links"
+                                                        style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 15px;">
+                                                        <table
+                                                            style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;">
+                                                            <tr>
+                                                                <td
+                                                                    style="padding: 0;padding-left: 20px;padding-right: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div style="font-weight: bold;">
+                                                                        <a href="https://russia-israel.com/abonentskoe-obsluzhivanie"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">
+                                                                            <span
+                                                                                style="white-space: nowrap;">АБОНЕНТСКАЯ</span>
+                                                                            <span
+                                                                                style="white-space: nowrap;">ПОДДЕРЖКА</span>
+                                                                        </a></div>
+                                                                </td>
+
+                                                                <td
+                                                                    style="padding: 0;padding-left: 20px;padding-right: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div style="font-weight: bold;">
+                                                                        <a href="https://insurance.russia-israel.com/"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">МЕДИЦИНСКОЕ
+                                                                            СТРАХОВАНИЕ
+                                                                        </a></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding: 0;padding-left: 20px;padding-right: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div style="font-weight: bold;">
+                                                                        <a href="https://alfagroup.co.il/investments.html"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;"><span
+                                                                                style="white-space: nowrap;">ИНВЕСТИЦИИ
+                                                                                В</span> <span
+                                                                                style="white-space: nowrap;">НЕДВИЖИМОСТЬ</span></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td
+                                                                    style="padding: 0;padding-left: 20px;padding-right: 20px; font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div style="font-weight: bold;">
+                                                                        <a href="https://allpassports.ru/"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">ИНВЕСТИЦИОННОЕ
+                                                                            ГРАЖДАНСТВО
+                                                                        </a></div>
+                                                                </td>
+
+                                                            </tr>
+                                                            <tr>
+                                                                <td
+                                                                    style="padding: 0;padding-left: 35px;padding-right: 35px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div><a href="https://russia-israel.com/recommend"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;">
+                                                                            <span
+                                                                                style="white-space: nowrap;">Нас</span>
+                                                                            <span
+                                                                                style="white-space: nowrap;">рекомендуют</span></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td
+                                                                    style="padding: 0;padding-left: 35px;padding-right: 35px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;">
+                                                                    <div><a href="https://russia-israel.com/reviews"
+                                                                            target="_blank"
+                                                                            style="text-decoration: none;color: #fff;font-size: 14px;text-align: center;"><span
+                                                                                style="white-space: nowrap;">Отзывы</span>
+                                                                            <span style="white-space: nowrap;">о
+                                                                                компании</span>
+                                                                        </a></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"
+                                                        style="border-top: 1px solid #455767;padding-top: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+                                                        <p
+                                                            style="color: #a6afda;font-size: 12px;padding-left: 10px;padding-right: 10px;font-family: sans-serif;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+                                                            Вы получили данное письмо, так как
+                                                            подписались на
+                                                            рассылку ООО «РИКЦ» на
+                                                            сайте <a href="https://russia-israel.com" target="_blank"
+                                                                style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;white-space: nowrap;">russia-israel.com</a>.
+                                                            Если письмо выглядит некорректно,
+                                                            откройте <a href="{{WebLetterUrl}}" target="_blank"
+                                                                style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;">web-версию</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <!-- END MAIN CONTENT AREA -->
+    </table>
+
+</body>
+
+</html>
