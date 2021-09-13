@@ -1,0 +1,930 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		/* -------------------------------------
+        	GLOBAL RESETS
+    	------------------------------------- */
+		img {
+			border: none;
+			-ms-interpolation-mode: bicubic;
+			max-width: 100%;
+		}
+
+		body {
+			background-color: #f6f6f6;
+			font-family: sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 14px;
+			line-height: 1.4;
+			margin: 0;
+			padding: 0;
+			-ms-text-size-adjust: 100%;
+			-webkit-text-size-adjust: 100%;
+		}
+
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+			width: 100%;
+			border-spacing: 0;
+			border: none;
+		}
+
+		table td {
+			padding: 0;
+			font-family: sans-serif;
+			font-size: 14px;
+			vertical-align: top;
+		}
+
+		/* -------------------------------------
+        	BODY & CONTAINER
+    	------------------------------------- */
+
+		.body {
+			background-color: #f6f6f6;
+			width: 100% !important;
+		}
+
+		/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+		.container {
+			display: block;
+			margin: 0 auto !important;
+			/* makes it centered */
+			max-width: 600px;
+			width: 100%;
+		}
+
+		/* This should also be a block element, so that it will fill 100% of the .container */
+		.content {
+			box-sizing: border-box;
+			display: block;
+			margin: 0 auto;
+			max-width: 600px;
+		}
+
+		/* -------------------------------------
+        	HEADER, FOOTER, MAIN
+    	------------------------------------- */
+		.header-logo {
+			display: block;
+			text-align: center;
+			margin: 30px 0 25px;
+		}
+
+		.header-header {
+			display: block;
+			text-align: center;
+			margin: 0;
+		}
+
+		.header-header img {
+			display: block;
+		}
+
+		.main {
+			border-spacing: 0;
+			font-family: sans-serif;
+			background-color: #fff;
+			color: #000;
+			border: none;
+		}
+
+		.wrapper {
+			box-sizing: border-box;
+			padding: 30px;
+		}
+
+		.content-block {
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		.footer {
+			clear: both;
+			margin-top: 10px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.footer td,
+		.footer p,
+		.footer span,
+		.footer a {
+			color: #fff;
+			font-size: 14px;
+			text-align: center;
+		}
+
+		/* -------------------------------------
+        	TYPOGRAPHY
+    	------------------------------------- */
+		h1,
+		h2,
+		h3,
+		h4 {
+			color: #000000;
+			font-family: sans-serif;
+			font-weight: 400;
+			line-height: 1.4;
+			margin: 0;
+			margin-bottom: 30px;
+		}
+
+		h1 {
+			font-size: 35px;
+			font-weight: 300;
+			text-align: center;
+			text-transform: capitalize;
+		}
+
+		.footer .two-columns .column {
+			max-width: 50% !important;
+		}
+
+		p,
+		ul,
+		ol {
+			color: #000;
+			font-family: sans-serif;
+			font-size: 0.9375rem;
+			font-weight: normal;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+
+		p li,
+		ul li,
+		ol li {
+			list-style-position: inside;
+			margin-left: 5px;
+		}
+
+		a {
+			color: #0065b5;
+			text-decoration: underline;
+		}
+
+		/* -------------------------------------
+        	BUTTONS
+    	------------------------------------- */
+		.btn {
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.btn>tbody>tr>td {
+			padding-bottom: 20px;
+		}
+
+		.btn table {
+			width: auto;
+		}
+
+		.btn table td {
+			background-color: #ffffff;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		.btn a {
+			font-weight: 400;
+			padding-right: 20px;
+			padding-left: 20px;
+			height: 40px;
+			line-height: 40px;
+			display: block;
+			color: #ffffff;
+			text-align: center;
+			background: #73b259;
+			border-radius: 4px;
+			font-size: 15px;
+			text-decoration: none;
+		}
+
+		.btn-primary table td {
+			background-color: #0065b5;
+		}
+
+		.btn-primary a {
+			background-color: #0065b5;
+			border-color: #0065b5;
+			color: #ffffff;
+		}
+
+		ul {
+			padding-left: 0;
+			margin-left: 0;
+		}
+
+		/* -------------------------------------
+        	OTHER STYLES THAT MIGHT BE USEFUL
+    	------------------------------------- */
+		.last {
+			margin-bottom: 0;
+		}
+
+		.first {
+			margin-top: 0;
+		}
+
+		.align-center {
+			text-align: center;
+		}
+
+		.align-right {
+			text-align: right;
+		}
+
+		.align-left {
+			text-align: left;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		.mt0 {
+			margin-top: 0;
+		}
+
+		.mb0 {
+			margin-bottom: 0;
+		}
+
+		.preheader {
+			color: transparent;
+			display: none;
+			height: 0;
+			max-height: 0;
+			max-width: 0;
+			opacity: 0;
+			overflow: hidden;
+			mso-hide: all;
+			visibility: hidden;
+			width: 0;
+		}
+
+		.powered-by a {
+			text-decoration: none;
+		}
+
+		hr {
+			border: 0;
+			border-bottom: 1px solid #f6f6f6;
+			margin: 20px 0;
+		}
+
+		h2 {
+			border-top: 1px solid #e6e6e6;
+			border-bottom: 1px solid #e6e6e6;
+			padding: 10px 0;
+			margin: 10px 0 0;
+		}
+
+		.services-item {
+			border-bottom: 1px solid #e6e6e6;
+			padding: 20px 0;
+		}
+
+		.services-item.no-border {
+			border: none;
+		}
+
+		.services-item p {
+			margin-bottom: 10px;
+		}
+
+		.services-item a {
+			display: block;
+			margin: 0 0 10px;
+			font-size: 16px;
+		}
+
+		table td.footer_links {
+			text-align: right;
+			padding-right: 20px;
+			padding-bottom: 15px;
+		}
+
+		/* -------------------------------------
+        	RESPONSIVE AND MOBILE FRIENDLY STYLES
+    	------------------------------------- */
+		@media only screen and (max-width: 620px) {
+			table[class=body] h1 {
+				font-size: 28px !important;
+				margin-bottom: 10px !important;
+			}
+
+			table[class=body] p,
+			table[class=body] ul,
+			table[class=body] ol,
+			table[class=body] td,
+			table[class=body] span,
+			table[class=body] a {
+				font-size: 16px !important;
+			}
+
+			table[class=body] .wrapper,
+			table[class=body] .article {
+				padding: 20px !important;
+			}
+
+			table[class=body] .content {
+				padding: 0 !important;
+			}
+
+			table[class=body] .container {
+				padding: 0 !important;
+				width: 100% !important;
+			}
+
+			table[class=body] .main {
+				border-left: 0 !important;
+				border-radius: 0 !important;
+				border-right: 0 !important;
+				box-shadow: none;
+			}
+
+			table[class=body] .btn table {
+				width: 100% !important;
+			}
+
+			table[class=body] .btn a {
+				width: 100% !important;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			table[class=body] .img-responsive {
+				height: auto !important;
+				max-width: 100% !important;
+				width: auto !important;
+			}
+
+			table td.footer_logo {
+				display: block;
+			}
+
+			table td.footer_links {
+				display: block;
+				text-align: center;
+				padding-right: 0;
+			}
+		}
+
+		/* -------------------------------------
+        	PRESERVE THESE STYLES IN THE HEAD
+    	------------------------------------- */
+		@media all {
+			.ExternalClass {
+				width: 100%;
+			}
+
+			.ExternalClass,
+			.ExternalClass p,
+			.ExternalClass span,
+			.ExternalClass font,
+			.ExternalClass td,
+			.ExternalClass div {
+				line-height: 100%;
+			}
+
+			.apple-link a {
+				color: inherit !important;
+				font-family: inherit !important;
+				font-size: inherit !important;
+				font-weight: inherit !important;
+				line-height: inherit !important;
+				text-decoration: none !important;
+			}
+
+			.btn-primary table td:hover {
+				background-color: #34495e !important;
+			}
+
+			.btn-primary a:hover {
+				background-color: #34495e !important;
+				border-color: #34495e !important;
+			}
+		}
+
+
+		table[class=body] td.two-columns {
+			font-size: 0 !important;
+		}
+
+		.two-columns .column {
+			max-width: 100% !important;
+		}
+
+		.two-columns .feedback {
+			max-width: 50% !important;
+		}
+
+		@media only screen and (max-width:450px) {
+			.two-columns .feedback {
+				max-width: 100% !important;
+				text-align: center !important;
+			}
+		}
+
+		@media screen and (min-width:451px) and (max-width:635px) {
+			.two-columns .feedback {
+				max-width: 50% !important;
+			}
+		}
+
+		@media only screen and (min-width: 600px) {
+			.section-mobile {
+				padding-left: 50px !important;
+				padding-right: 49px !important;
+			}
+		}
+
+		@media only screen and (max-width: 599px) {
+			.section-mobile {
+					padding-left: 20px !important;
+					padding-right: 20px !important;
+			}
+
+			.section-mobile p {
+				margin-right: 0 !important;
+			}
+
+			.section-mobile .section__block {
+				padding-left: 20px !important;
+				padding-right: 20px !important;
+			}
+		}
+	</style>
+</head>
+
+<body class=""
+	style="width: 100% !important;background-color: #e5e5e5;font-family: sans-serif;-webkit-font-smoothing: antialiased;font-size: 14px;line-height: 1.4;margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+	<table border="0" cellpadding="0" cellspacing="0" class="body"
+		style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;background-color: #e5e5e5;">
+		<tr>
+			<td class="container"
+				style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;display: block;max-width: 600px;width: 100%;margin: 0 auto !important;">
+				<div class="content" style="box-sizing: border-box;display: block;margin: 0 auto;max-width: 600px;">
+					
+					<span class="header-header" style="display: block;text-align: center;margin: 0;">
+						<a target="_blank" href="https://russia-israel.com/" style="color: #0065b5;text-decoration: underline;">
+							<img
+								src="https://dmitrii-burdin.ru/letter-images/mistakes/header.jpg"
+								alt="РИКЦ — Помогаем получить гражданство Израиля с 2014 года"
+								style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;display: block;">
+							</a>
+					</span>
+
+					<!-- START CENTERED WHITE CONTAINER -->
+					<span class="preheader"
+						style="color: transparent;display: none;height: 0;max-height: 0;max-width: 0;opacity: 0;overflow: hidden;mso-hide: all;visibility: hidden;width: 0;"></span>
+					<table class="main"
+						style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;font-family: sans-serif;background-color: #ffffff;color: #000;">
+
+						<!-- START MAIN CONTENT AREA -->
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td
+											style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+                      <p style="font-size: 24px !important;font-weight: 400;margin: 0;margin-bottom: 36px;color: #207EBE;font-family: sans-serif;">
+												Шалом и здравствуйте!
+											</p>                                
+
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;">
+												Вы конечно же знаете, что основная деятельность и миссия компании РИКЦ — это помощь в получении израильского гражданства для тех у кого есть еврейские корни.
+											</p>
+
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px;font-weight: 400;margin: 0;margin-right: 30px;">
+												Но даже если Вы оформляете гражданство Израиля самостоятельно или пользуетесь услугой другой компании, РИКЦ может помочь избежать частых ошибок. И сегодня расскажем о двух из них.
+											</p>              
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="cover" style="-webkit-font-smoothing:subpixel-antialiased;padding:0">
+								<img src="https://dmitrii-burdin.ru/letter-images/mistakes/img-1.jpg" alt="Флаги Израиля и России на переговорном столе" width="600" style="border:0;display:block;height:auto;max-width:600px;width:100%">
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+                      style="font-size: 24px !important;font-weight: 400;margin: 0;margin-bottom: 20px;color: #207EBE;font-family: sans-serif;">
+                      Консульская проверка
+										</p> 
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												Если у Вас на руках есть документы, подтверждающие Ваши еврейские корни, то Вам осталось пройти, пожалуй, самый сложный шаг на пути к гражданству — консульскую проверку.
+											</p>											
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												Именно здесь возникает сложность у большинства — <b>по статистике 80%</b> заявителей получают отказ на первом собеседовании при самостоятельном прохождении (из нашей практики с 2014 года). Подводит, обычно, надежда только на пакет документов и излишняя уверенность, что у Консула не возникнет никаких сомнений и дополнительных вопросов.
+											</p>
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;margin-right: 25px;">
+												Однако тот факт, что большинство россиян, получая израильский паспорт, не планируют переезжать на постоянное&nbsp;жительство в Израиль, не является секретом, в том числе и для израильского консульства. Поэтому на собеседовании Консул обязательно постарается выявить истинную причину оформления гражданства.
+											</p>									                  
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;background-color: #EEF5FA;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												<i>Читайте примеры из нашей практики о случаях на консульской проверке:</i>
+											</p>											
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												<i>1.</i> Консул потребовал дополнительную справку на выездной проверке в Екатеринбурге. <i><a href="https://russia-israel.com/cases/sluchaj-iz-praktiki-poluchenie-dopolnitelnoj-spravki-po-zaprosu-konsula.html" target="_blank" style="color:#52B3E6;">Читать пример</a></i>
+											</p>
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												<i>2.</i> Как один вопрос Консула изменил ход репатриации. <i><a href="https://russia-israel.com/cases/sluchaj-iz-praktiki-klient-ne-poluchil-vizu-repatrianta-srazu.html" target="_blank" style="color:#52B3E6;">Читать пример</a></i>
+											</p>									                  
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">										
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												В <a href="https://russia-israel.com/blog/konsulskaya-proverka-pri-podache-dokumentov-na-pmzh-v-izrail.html" target="_blank" style="color:#52B3E6;">этой статье</a> мы рассказываем, как обычно проходит собеседование, какие вопросы задаются и как нужно себя вести. 
+											</p>											
+
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;margin-right: 25px;">
+												Читать на сайте <a href="https://russia-israel.com/blog/konsulskaya-proverka-pri-podache-dokumentov-na-pmzh-v-izrail.html" target="_blank" style="color:#52B3E6;">“Консульская проверка: что спрашивает консул при подаче документов на ПМЖ в Израиль”</a>
+											</p>									                  
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="cover" style="-webkit-font-smoothing:subpixel-antialiased;padding:0">
+								<img src="https://dmitrii-burdin.ru/letter-images/mistakes/img-2.jpg" alt="Цепочка ДНК" width="600" style="border:0;display:block;height:auto;max-width:600px;width:100%">
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+                      style="font-size: 24px !important;font-weight: 400;margin: 0;margin-bottom: 20px;color: #207EBE;font-family: sans-serif;">
+                      ДНК-тест и косвенные документы
+										</p> 
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												Результаты ДНК-теста или других современных тестов на происхождение, не входят в основной пакет документов для получения права на репатриацию и не могут стать основанием&nbsp;для алии по Закону “О возвращении”.
+											</p>											
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px;">
+												Только в двух случаях тест ДНК действительно может помочь в получении израильского гражданства:
+											</p>
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;margin-bottom: 20px;margin-right: 25px;">
+												<b>Первый —</b> когда ребенок был рожден вне брака у еврея и матери другой национальности или прошло слишком много времени, по мнению Посольства Израиля, между фактом родов и оформлением законного союза.
+											</p>
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 25px;">
+												<b>Второй —</b> если в графе “Отец” ребёнка, рождённого от еврея, не был вписан настоящий биологический отец или эта графа не была заполнена.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;background-color: #EEF5FA;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												<i>Как и где пройти тест ДНК на еврейство, кто дает консультацию по этому поводу, <a href="https://russia-israel.com/evreyskie-korni/test-krovi-dnk-na-evrejstvo-analiz-na-evrejstvo" target="_blank" style="color:#52B3E6;">читайте на нашем сайте</a></i>
+											</p>																				                  
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">										
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												Что касается косвенных доказательств, то их собирают, чтобы у Консула было меньше вопросов и сомнений в достоверности, в том числе оригиналов. То есть для усиления собранного пакета документов.
+											</p>											
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;">
+												Не имея прямых доказательств невозможно получить гражданство&nbsp;основываясь только на косвенные.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;background-color: #EEF5FA;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;">
+												<i>Как доказать принадлежность к еврейскому народу? Где искать документы? Как найти еврейские корни по фамилии? Ответы на эти и другие вопросы читайте на нашем <a href="https://russia-israel.com/evreyskie-korni/kak-najti-i-dokazat-svoi-evrejskie-korni#kak-prosto-i-bystro-dokazat-evrejskie-korni" target="_blank" style="color:#52B3E6;">сайте</a></i>
+											</p>																				                  
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="cover" style="-webkit-font-smoothing:subpixel-antialiased;padding:0">
+								<img src="https://dmitrii-burdin.ru/letter-images/mistakes/img-3.jpg" alt="Менеджер с клиентом пожимают руки" width="600" style="border:0;display:block;height:auto;max-width:600px;width:100%">
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">										
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												Если Вы обращаетесь за помощью в репатриации в какую либо организацию, очень важно изучить опыт, репутацию и отзывы о компании, которую Вы выберете. 
+											</p>
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-bottom: 20px; margin-right: 16px;margin-right: 30px;">
+												<b>Ошибка в выборе может привести к потере времени и дополнительным затратам</b>, как в <a href="https://russia-israel.com/cases/sluchaj-iz-praktiki-podtverzhdenie-evrejskih-kornej.html" target="_blank" style="color:#52B3E6;">примере из практики РИКЦ</a></i>, в котором семья могла бы сократить срок поиска документов и получить визу на репатриацию с первого раза, если бы обратилась за помощью к специалистам в начале процесса.
+											</p>											
+											
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;">
+												Благодаря надёжности и безупречной деловой репутации, РИКЦ рекомендуют не только клиенты, но и известные люди и компании. Посмотреть рекомендации и отзывы о РИКЦ можно <a href="https://russia-israel.com/guarantees" target="_blank" style="color:#52B3E6;">здесь</a>.
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 26px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<img src="https://dmitrii-burdin.ru/letter-images/medicine-am3/icon-1.png" alt="P.S." style="margin-bottom: 10px;">
+
+											<p style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;">
+												В следующем письме будет полезный чек-лист: <b>“Готовы ли Вы к оформлению гражданства Израиля?”</b>. Оставайтесь с нами!
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="wrapper section-mobile"
+								style="padding: 36px 50px 36px 50px;font-family: sans-serif;font-size: 14px;vertical-align: top;box-sizing: border-box;background-color: #EEF5FA;">
+								<table border="0" cellpadding="0" cellspacing="0"
+									style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+									<tr>
+										<td style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;margin-bottom: 20px;">
+												Если Вам нужна помощь в поиске и подтверждении еврейских корней, обращайтесь в РИКЦ.
+											</p>
+
+											<p
+												style="color: #000;font-family: sans-serif;font-size: 16px; line-height: 24px; font-weight: 400;margin: 0;margin-right: 16px;margin-bottom: 26px;">
+												Мы поможем избежать сложностей с оформлением и поиском документов, предоставлением доказательств о наличии еврейских корней и подготовим к собеседованию с Консулом.
+											</p>
+											
+											<p style="text-align: center;color: #fff;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+												<a target="_blank" href="https://russia-israel.com/?form=open" style="color: #0065b5;text-decoration: underline;">
+													<img src="https://dmitrii-burdin.ru/letter-images/mistakes/btn-1.png" alt="Кнопка 'Бесплатная консультация'" style="max-width:335px;border: none;-ms-interpolation-mode: bicubic;width: 100%;">
+												</a>
+											</p> 
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+<!-- ///////// -->
+
+		<tr>
+			<td class="vadim-block"
+				style="text-align: center;padding-top: 30px;padding-bottom: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;"
+				background="https://uploads.russia-israel.com/sitizenship/vadim-bg.jpg">
+				<img src="https://uploads.russia-israel.com/sitizenship/vadim.png" alt="Вадим Жоров, основатель РИКЦ" width="100" height="100" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+				<p
+					style="color: #fff;padding-top: 10px;font-weight: 400;font-size: 14px;line-height: 1;margin-bottom: 20px;font-family: sans-serif;margin: 0;">
+					С уважением к Вам,</p>
+				<hr style="display: block;height: 1px;width: 245px;background-color: #CB9917;border:0;margin: 0;margin-left: auto;margin-right: auto;margin-top: 10px;margin-bottom: 10px;">
+				<p
+					style="color: #fff;margin-bottom: 20px;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;">
+					Вадим Жоров, основатель РИКЦ</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="height: 2px;"></td>
+		</tr>
+
+		<tr>
+			<td
+				style="text-align: center;background-color: #1063B0;padding-top: 25px;padding-bottom: 20px;padding-left: 30px;padding-right: 30px;font-family: sans-serif;font-size: 14px;vertical-align: top;">
+
+				<table border="0" cellpadding="0" cellspacing="0"
+					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+					<tr>
+						<td class="two-columns"
+							style="-webkit-font-smoothing:subpixel-antialiased;font-size:0;text-align:center">
+							<div class=""
+								style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:118px;text-align:left;vertical-align:top;width:100%;margin-bottom: 13px;">
+								<table width="100%" cellpadding="0" style="border-collapse:collapse">
+									<tbody>
+										<tr>
+											<td
+												style="-webkit-font-smoothing:subpixel-antialiased;padding-right: 13px;vertical-align: middle;">
+												<p
+													style="color: #000;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;margin-bottom: 20px;margin-top: 20px;margin-left: auto;margin-right: auto;width: 57px;height: 52px;">
+													<img src="https://dmitrii-burdin.ru/letter-images/residence/telegram.png"
+														alt="Логотип Telegram"
+														style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+												</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class=""
+								style="-webkit-font-smoothing:subpixel-antialiased;display:inline-block;font-size:14px;max-width:400px;text-align:left;vertical-align:middle;width:100%;margin-bottom: 13px;">
+								<table width="100%" cellpadding="0" style="border-collapse:collapse">
+									<tbody>
+										<tr>
+											<td
+												style="-webkit-font-smoothing:subpixel-antialiased;padding-left: 13px;;vertical-align: middle;">
+												<p
+													style="color: #fff;font-size: 14px;margin-bottom: 20px;font-family: sans-serif;font-weight: normal;">
+													В нашем Telegram-канале мы подбираем и публикуем информацию, актуальную всем, кто оформляет или уже имеет израильское гражданство Израиля. 
+
+													<br><br>Подписывайтесь и будьте в курсе!</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0"
+					style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+					<tr>
+						<td>
+							<p
+								style="color: #fff;text-align:center;margin-bottom: 20px;font-family: sans-serif;font-size: 0.9375rem;font-weight: normal;margin: 0;">
+								<a href="https://t.me/russiaisraelcom"
+									style="color: #0065b5;text-decoration: underline;">
+									<img src="https://dmitrii-burdin.ru/letter-images/medicine-am1/btn-5.png"
+										alt="Кнопка 'Подписаться на телеграм'"
+										style="max-width: 262px; width:100%;border: none;-ms-interpolation-mode: bicubic;">
+								</a>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		<tr>
+			<td style="height: 2px;"></td>
+		</tr>
+		
+		<tr>
+		    <td class="footer" style="background:linear-gradient(180deg, #0065B1 0%, #062141 100%); background-color: #131D4D;padding-top: 30px;margin-top: 10px;font-family: sans-serif;font-size: 14px;vertical-align: top;clear: both;text-align: center;width: 100%;">
+		        <table style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;border-spacing: 0;border: none;">
+		            <tr>
+		                <td class="footer_logo" style="padding: 0;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+		                    <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+		                        <img src="https://uploads.russia-israel.com/sitizenship/footer-logo.png" alt="ООО 'РИКЦ'" width="138px" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;">
+		                    </p>
+		                    <p style="color: #fff;font-family: sans-serif;font-size: 14px;font-weight: normal;margin: 0;margin-bottom: 20px;text-align: center;">
+		                        <a href="https://www.youtube.com/channel/UChkKRDcO3aYoowaoLonh-KA" target="_blank" style="color: #fff;text-decoration: underline;font-size: 14px;text-align: center;"><img src="https://uploads.russia-israel.com/sitizenship/youtube.png" alt="Логотип Youtube" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+		                        <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://www.facebook.com/alfaricc/" target="_blank"><img src="https://uploads.russia-israel.com/sitizenship/facebook.png" alt="Логотип Facebook" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+		                        <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://www.instagram.com/russia_israel_com/" target="_blank"><img src="https://uploads.russia-israel.com/sitizenship/instagram.png" alt="Логотип Instagram" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+		                        <a style="margin-left: 10px;color: #fff;text-decoration: underline;font-size: 14px;text-align: center;" href="https://t.me/russiaisraelcom" target="_blank"><img src="https://uploads.russia-israel.com/sitizenship/telegram.png" alt="Логотип Telegram" style="border: none;-ms-interpolation-mode: bicubic;max-width: 100%;"></a>
+		                    </p>
+		                </td>
+		            </tr>
+
+		            <tr>
+		                <td class="footer_links" style="padding: 0;font-family: sans-serif;font-size: 14px !important;vertical-align: top;color: #fff;text-align: center;padding-bottom: 15px;">
+		                    <table style="width: 100% !important;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-spacing: 0;border: none;">
+		                        <tr>
+		                            <td style="padding: 0;padding-left: 20px;padding-right: 5px; font-family: sans-serif;font-size: 14px !important;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;"><div style="font-weight: bold;"><a href="https://russia-israel.com/grazhdanstvo-izrailya" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px !important;text-align: center;text-transform: uppercase;">ГРАЖДАНСТВО ИЗРАИЛЯ</a></div></td>
+		                            <td style="padding: 0;padding-left: 5px;padding-right: 20px;font-family: sans-serif;font-size: 14px !important;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;"><div style="font-weight: bold;"><a href="https://russia-israel.com/repatriatsiya-v-izraile" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px !important;text-align: center;text-transform: uppercase;">РЕПАТРИАЦИЯ В ИЗРАИЛЬ</a></div></td>
+		                        </tr>
+		                        <tr>
+		                            <td style="padding: 0;padding-left: 20px;padding-right: 5px;font-family: sans-serif;font-size: 14px !important;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;"><div style="font-weight: bold;"><a href="https://russia-israel.com/abonentskoe-obsluzhivanie" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px !important;text-align: center;">АБОНЕНТСКАЯ ПОДДЕРЖКА</a></div></td>
+		                            <td style="padding: 0;padding-left: 5px;padding-right: 20px;font-family: sans-serif;font-size: 14px !important;vertical-align: top;color: #fff;text-align: center;padding-bottom: 10px;"><div style="font-weight: bold;"><a href="https://insurance.russia-israel.com/" target="_blank" style="text-decoration: none;color: #fff;font-size: 14px !important;text-align: center;">МЕДИЦИНСКОЕ СТРАХОВАНИЕ</a></div></td>
+		                        </tr>
+		                    </table>
+		                </td>
+		            </tr>
+
+		            <tr>
+		                <td colspan="2" style="border-top: 1px solid #455767;padding-top: 20px;font-family: sans-serif;font-size: 14px;vertical-align: top;color: #fff;text-align: center;">
+		                    <p style="color: #7D96A5;;font-size: 12px;padding-left: 25px;padding-right: 22px;font-family: sans-serif;font-weight: normal;margin: 0;margin-bottom: 27px;text-align: center;">Вы получили данное письмо, так как указали свои данные на сайте <a href="https://russia-israel.com" target="_blank" style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;white-space: nowrap;">russia-israel.com</a>. Если письмо выглядит некорректно, откройте <a href="{{WebLetterUrl}}" target="_blank" style="color: #8999e8;text-decoration: underline;font-size: 14px;text-align: center;">web-версию</a></p>
+		                </td>
+		            </tr>
+		        </table>
+		    </td>
+		</tr>
+
+		<!-- END MAIN CONTENT AREA -->
+	</table>
+
+	<!-- END CENTERED WHITE CONTAINER -->
+	</div>
+	</td>
+	</tr>
+	</table>
+</body>
+
+</html>
